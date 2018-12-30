@@ -68,7 +68,7 @@ vi $GOPATH/src/github.com/ansilh/golang-demo/main.go
   func main(){  
    fmt.Println("Hello World.!")
   }
-  ```
+```
 
 * Build and install the program
 ```
