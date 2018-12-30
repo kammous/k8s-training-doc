@@ -64,11 +64,10 @@ vi $GOPATH/src/github.com/ansilh/golang-demo/main.go
   ```
   package main
   import "fmt"
-
   func main(){  
    fmt.Println("Hello World.!")
   }
-```
+  ```
 
 * Build and install the program
 ```
