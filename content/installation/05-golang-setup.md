@@ -55,17 +55,18 @@ mkdir -p $GOPATH/src/github.com/ansilh/golang-demo
 ```
 
 * Create a hello world golang program
-```
-vi $GOPATH/src/github.com/ansilh/golang-demo/main.go
-```
-```
-package main
-import "fmt"
-<br>
-func main(){  
- fmt.Println("Hello World.!")
-}
-```
+  ```golang
+  vi $GOPATH/src/github.com/ansilh/golang-demo/main.go
+  ```
+  
+  ```
+  package main
+  import "fmt"
+
+  func main(){  
+   fmt.Println("Hello World.!")
+  }
+  ```
 
 
 * Build and install the program
