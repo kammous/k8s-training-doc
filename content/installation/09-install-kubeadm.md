@@ -20,7 +20,7 @@ sudo apt-get update && sudo apt-get install -y apt-transport-https curl
 
 Add gpg key for apt
 ```
-sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg |sudo apt-key add -
 ```
 
 Add apt repository
