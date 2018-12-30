@@ -6,17 +6,35 @@ chapter = false
 pre = "<b>- </b>"
 +++
 
-# Install kubeadm
+# Install kubelet , kubeadm and  kubectl
 
-Download kubeadm
+Verify the MAC address and product_uuid are unique for every node
 
-Download kubelet
+- `ip link` or `ifconfig -a`
+- `sudo cat /sys/class/dmi/id/product_uuid`
 
-Download kubectl
+Download pre-requisites
+```
+apt-get update && apt-get install -y apt-transport-https curl
+```
 
-Kubernetes cluster network design
+Add gpg key for apt
+```
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+```
 
-Pod Network
-Service Network
-LoadBalancer range
-Node IP range
+Add apt repository
+```
+cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+```
+
+Install kubelet , kubeadm and  kubectl
+```
+apt-get update
+apt-get install -y kubelet kubeadm kubectl
+apt-mark hold kubelet kubeadm kubectl
+```
+
+Repeat the same steps on worker node
