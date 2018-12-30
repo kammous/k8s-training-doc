@@ -23,5 +23,5 @@ pre = "<b>- </b>"
 
 | VBox Host Networking |      
 |---------------|--------------
-| HostOnly      | 192.168.78.0
+| HostOnly      | 172.28.10.0
 | NAT           | VBOX Defined

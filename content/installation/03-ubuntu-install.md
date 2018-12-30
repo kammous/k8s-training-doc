@@ -74,7 +74,7 @@ sudo vi /etc/network/interfaces
 ```
 auto enp0s8
 iface enp0s8 inet static
-    address 192.168.78.X #<--- Replace X with corresponding IP octect
+    address 172.28.10.X #<--- Replace X with corresponding IP octect
     netmask 255.255.255.0
 ```
 ```
@@ -105,8 +105,8 @@ sudo systemd-machine-id-setup
 - Add needed entries in /etc/hosts
 ```
 sudo bash -c  "cat <<EOF >>/etc/hosts
-192.168.78.201 k8s-master-01
-192.168.78.202 k8s-worker-01
+172.28.10.201 k8s-master-01
+172.28.10.202 k8s-worker-01
 EOF"
 ```
 

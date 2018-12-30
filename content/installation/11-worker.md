@@ -22,3 +22,11 @@ Execute kubeadm command to add the Worker to cluster
 ```
 sudo kubeadm join 192.168.56.201:6443 --token <token> --discovery-token-ca-cert-hash <discovery hash>
 ```
+
+Verify node list from Master node
+```
+kubectl get nodes
+NAME            STATUS     ROLES    AGE   VERSION
+k8s-master-01   NotReady   master   18m   v1.13.1
+k8s-worker-01   NotReady   <none>   17s   v1.13.1
+```
