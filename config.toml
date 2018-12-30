@@ -1,4 +1,4 @@
-title = "Hugo Learn Documentation"
+title = "Kubernetes Training"
 theme = "hugo-theme-learn"
 # For search functionality
 [outputs]
