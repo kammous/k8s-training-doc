@@ -17,7 +17,7 @@ pre = "<b>- </b>"
  Internet access is needed on all VMs (for downloading needed binaries)
  Make sure you can see the NAT network.(If not , create one)
 
-| VBox Host Networking     
+| VBox Host Networking |      
 |---------------|--------------
 | HostOnly      | 192.168.78.0
 | NAT           | VBOX Defined
