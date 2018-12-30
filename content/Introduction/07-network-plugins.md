@@ -11,6 +11,8 @@ pre = "<b>- </b>"
 We need to access the container from outside world and the container running on different hosts have to communicate each other.
 
 Here we will see how can we do it with bridging.
+* Traditional networking
+![Network](/images/nw-traditional.PNG?class=shadow)
 
 * Create a veth pair on Host.
 ```
@@ -29,6 +31,8 @@ ip netns show
 ip link set veth1 netns bash-nw-namespace
 ip link list
 ```
+* Resulting network
+![Network](/images/nw-namespace.png?class=shadow)
 
 * Create a Bridge interface
 ```
@@ -46,6 +50,8 @@ brctl show
 brctl addif cbr0 veth0
 brctl show
 ```
+* Resulting network
+![Network](/images/nw-namespace-with-bridge.png?class=shadow)
 
 * Assign IP to interface
 ```
@@ -61,5 +67,5 @@ Like bridging , we can opt other networking solutions.
 
 Later we will see how Weave Network and Calico plugins works.
 You may read bit more on Docker networking basics on below blog post
- 
+
 [Docker networking](https://blog.docker.com/2016/12/understanding-docker-networking-drivers-use-cases/)
