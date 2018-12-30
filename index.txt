@@ -1,0 +1,143 @@
+1. Introduction
+ - Linux Kernel
+ - Namespaces
+ - cGroups
+ - Containers
+ - Docker
+ - Kubernetes
+ - Network Plugins
+
+2. Installation
+ - VirtualBox Installation
+ - Networking Setup on Virtual Box
+ - Ubuntu 16.04 Installation
+ - Docker Installation
+ - Setup Golang
+ - Build A Demo Web App
+ - Build Docker Image
+ - Run Docker Image
+ - Install kubeadm
+ - Deploy Master
+ - Deploy Worker
+
+3. Pod
+ - kubectl configuration
+ - View nodes
+ - View Pods
+ - Namespaces
+ - Create an Nginx Pod
+   - Imperative
+   - Declarative
+ - Explore Pod
+
+4. Self Healing
+ - Readiness Probe
+ - Liveness Probe
+
+5. Services
+ - Expose Pod
+ - LoadBalancer
+ - NodePort
+ - ClusterIP
+ - None
+
+6. Multi-Container Pod
+ - Pod with two containers
+   - Nginx Pod
+   - CentOS Pod
+ - Schedule a Pod on specific node
+
+7. Volume & Volume mounts
+ - Create a volume with type emptyDir
+ - Mount the volume to container
+
+8. Init Containers
+ - Create a Pod
+   - Init Container sync contents to a volume
+   - Nginx container to host the content from volume
+9. Explore API
+ - Access via cURL
+ - Structure of API
+   - Core components
+   - Versioning of API groups
+ - Explore API calls using 'strace'
+ - Proxying
+
+10. Deployments
+ - Create an Nginx deployemnt with version 1
+ - Expose Nginx service to external world
+ - Inspect deployemnt and examine the building blocks
+
+11. Namespaces
+ - Create a new namespace
+ - Create a Pod in new namespace
+ - List all objects in a namespace
+
+12. Resource allocation and Limits
+ - Apply resource request and Limits to Pod
+ - Apply limit to namespace
+
+13. ReplicaSet
+ - Create a replicaset with 3 Nginx replicas
+ - Delete one Pod and observe how rs behaves
+
+14. DaemonSet
+ - Why we need DaemonSet
+ - How it differs from ReplicaSet
+ - Create a DaemonSet to run nginx on all worker nodes
+
+15. Labels
+ - Labeling of Nodes
+ - Labeling of Pods
+ - How to create custom labels
+ - Schedule Pod based on labels
+ - Manually add and remove Pod from Deployment
+
+16. ConfigMaps
+ - Create configmap from variable
+ - Create configmap from file
+ - Access config map from container
+  - Volume
+  - Environmental variable
+
+17. Secrets
+ - Store secrets
+  - Generic
+  - Private image registry
+ - Access secrets from Pod
+
+18. Rolling Upgrades and Rollbacks
+ - Create deployment with nginx version x
+ - Update deployment to version y
+ - Observe replicasets
+ - Rollback an update
+ - View history of updates
+
+19. Persistent Volumes
+ - Create NFS server
+ - Create PV using NFS
+
+20. Persistent Volume Claim
+ - Use PVC and mount NFS volume
+
+21. Logging
+ - Pod
+ - Node
+ - Component services
+
+22. Jobs
+ - Create a one time job
+
+23. CronJob
+ - Create a re-occurring job
+
+24. Backup and Restore
+ - What to backup
+   - Etcd
+   - Certificates
+   - Yamls
+
+25. Dynamic Volume Provisioning
+ - Targetd configuration
+ - Storage Class
+ - Mount volume from Dynamic Volume Provisioner
