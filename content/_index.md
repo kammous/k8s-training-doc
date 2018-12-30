@@ -25,3 +25,4 @@ Later on it was heavly used for managing internal distributed systems and jobs
  - Red Hat Certified Engineer.
 
    ![About the Trainer](../images/profile.png)
+   <img style="float: right;" src="images/profile.png" />
