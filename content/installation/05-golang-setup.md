@@ -55,11 +55,11 @@ mkdir -p $GOPATH/src/github.com/ansilh/golang-demo
 ```
 
 * Create a hello world golang program
-  ```golang
+  ```
   vi $GOPATH/src/github.com/ansilh/golang-demo/main.go
   ```
   
-  ```
+  ```golang
   package main
   import "fmt"
 
