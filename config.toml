@@ -1,5 +1,7 @@
 title = "Kubernetes Training"
 theme = "hugo-theme-learn"
+createFromSiteMenusMain = true
+
 # For search functionality
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
@@ -7,3 +9,4 @@ home = [ "HTML", "RSS", "JSON"]
 [params]
 themeVariant = "mine"
 editURL = "https://github.com/ansilh/k8s-training-doc/tree/master/content/"
+menu = [ "Introduction", "Installation" ]
