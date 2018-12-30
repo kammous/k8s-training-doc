@@ -15,7 +15,7 @@ Verify the MAC address and product_uuid are unique for every node
 
 Download pre-requisites
 ```
-apt-get update && apt-get install -y apt-transport-https curl
+sudo apt-get update && apt-get install -y apt-transport-https curl
 ```
 
 Add gpg key for apt
@@ -32,9 +32,9 @@ EOF
 
 Install kubelet , kubeadm and  kubectl
 ```
-apt-get update
-apt-get install -y kubelet kubeadm kubectl
-apt-mark hold kubelet kubeadm kubectl
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
 Repeat the same steps on worker node
