@@ -13,12 +13,12 @@ Get discovery secret from Master node.
 echo sha256:$(openssl x509 -in /etc/kubernetes/pki/ca.crt -noout -pubkey | openssl rsa -pubin -outform DER 2>/dev/null | sha256sum | cut -d' ' -f1)
 ```
 
-Get node join token
+Get node join token from Master node.
 ```
 kubeadm token list |grep bootstra |awk '{print $1}'
 ```
 
-Execute kubeadm command to add the node to cluster
+Execute kubeadm command to add the Worker to cluster
 ```
 sudo kubeadm join 192.168.56.201:6443 --token <token> --discovery-token-ca-cert-hash <discovery hash>
 ```
