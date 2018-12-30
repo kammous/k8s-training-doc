@@ -60,11 +60,10 @@ vi $GOPATH/src/github.com/ansilh/golang-demo/main.go
 ```
 
 - Paste below code  
-```
 
+  ```
 package main
 import "fmt"
-
 func main(){  
  fmt.Println("Hello World.!")
 }
