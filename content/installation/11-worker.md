@@ -8,7 +8,17 @@ pre = "<b>- </b>"
 
 # Add worker node to cluster
 
+Get discovery secret from Master node.
+```
+echo sha256:$(openssl x509 -in /etc/kubernetes/pki/ca.crt -noout -pubkey | openssl rsa -pubin -outform DER 2>/dev/null | sha256sum | cut -d' ' -f1)
+```
+
+Get node join token
+```
+kubeadm token list |grep bootstra |awk '{print $1}'
+```
+
 Execute kubeadm command to add the node to cluster
 ```
-sudo kubeadm join 192.168.56.201:6443 --token 7b9521.7o0nbgmeaic6qg1s --discovery-token-ca-cert-hash sha256:1e69a7ca916b75847cce431fd1954b4039cc3877d185e8a23707735c344df96b
+sudo kubeadm join 192.168.56.201:6443 --token <token> --discovery-token-ca-cert-hash <discovery hash>
 ```
