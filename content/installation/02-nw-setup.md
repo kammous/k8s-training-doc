@@ -12,10 +12,14 @@ pre = "<b>- </b>"
   - Got to menu and navigate to File ->Host Network Manager
   - Then click "Create"
   - Modify the network range to `192.168.78.0/24` if its different.
- This will create a Host-Only Network  
- DHCP should be disabled on this network
- Internet access is needed on all VMs (for downloading needed binaries)
- Make sure you can see the NAT network.(If not , create one)
+ This will create a Host-Only Network.
+
+ DHCP should be disabled on this network.
+
+ Internet access is needed on all VMs (for downloading needed binaries).
+
+ Make sure you can see the NAT network.(If not , create one).
+ 
 
 | VBox Host Networking |      
 |---------------|--------------
