@@ -15,7 +15,7 @@ Verify the MAC address and product_uuid are unique for every node
 
 Download pre-requisites
 ```
-sudo apt-get update && apt-get install -y apt-transport-https curl
+sudo apt-get update && sudo apt-get install -y apt-transport-https curl
 ```
 
 Add gpg key for apt
