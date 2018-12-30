@@ -7,44 +7,45 @@ pre = "<b>- </b>"
 +++
 # Build a Demo WebApp
 
-* Create a directory for the demo app.
+Create a directory for the demo app.
 ```
 mkdir -p ${GOPATH}/src/github.com/ansilh/demo-webapp
 ```
 
-* Create demo-webapp.go file
+Create demo-webapp.go file
 ```
 vi ${GOPATH}/src/github.com/ansilh/demo-webapp/demo-webapp.go
 ```
-```
- package main
 
- import (
+```
+package main
+
+import (
   "fmt"
   "net/http"
   "log"
- )
+)
 
- func demoDefault(w http.ResponseWriter, r *http.Request) {
+func demoDefault(w http.ResponseWriter, r *http.Request) {
    fmt.Fprintf(w, "404 - Page not found - This is a dummy default backend") // send data to client side
- }
+}
 
- func main() {
+func main() {
   http.HandleFunc("/", demoDefault) // set router
   err := http.ListenAndServe(":9090", nil) // set listen port
    if err != nil {
     log.Fatal("ListenAndServe: ", err)
    }
- }
+}
 ```
 
-* Build a static binary
+Build a static binary
 ```
 cd $GOPATH/src/github.com/ansilh/demo-webapp
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -ldflags="-w -s" -o $GOPATH/bin/demo-webapp
 ```
 
-* Execute the program
+Execute the program
 ```
 demo-webapp
 ```
