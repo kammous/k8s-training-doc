@@ -23,6 +23,4 @@ Later on it was heavly used for managing internal distributed systems and jobs
  - Linux Foundation Certified Engineer.
  - AWS Certified Solution Architect Associate.
  - Red Hat Certified Engineer.
-
-   ![About the Trainer](../images/profile.png)
-   <img style="float: left;" src="images/profile.png" />
+   <img style="float: left;" src="../images/profile.png" />
