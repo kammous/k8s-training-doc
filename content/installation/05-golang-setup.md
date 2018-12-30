@@ -59,9 +59,8 @@ mkdir -p $GOPATH/src/github.com/ansilh/golang-demo
 vi $GOPATH/src/github.com/ansilh/golang-demo/main.go
 ```
 
-- Paste below code
-  
-  ```
+- Paste below code  
+```
 package main
 import "fmt"
 
