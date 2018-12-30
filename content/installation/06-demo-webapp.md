@@ -16,7 +16,7 @@ mkdir -p ${GOPATH}/src/github.com/ansilh/demo-webapp
 ```
 vi ${GOPATH}/src/github.com/ansilh/demo-webapp/demo-webapp.go
 ```
- ```
+```
  package main
 
  import (
@@ -51,4 +51,4 @@ demo-webapp
 Open the browser and check if you can see the response using IP:9090
 If you see the output “404 – Page not found – This is a dummy default backend” indicates that the program is working
 
-Press Ctrl+c to terminate the program 
+Press Ctrl+c to terminate the program

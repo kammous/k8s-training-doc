@@ -14,14 +14,17 @@ In this session, we will install and setup docker in a simple and easy way on Ub
 ```
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
+
 * Add repository
 ```
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 ```
+
 * Refresh repository
 ```
 sudo apt-get update
 ```
+
 * Verify whether docker is available in repo or not
 ```
 sudo apt-cache policy docker-ce
@@ -34,6 +37,7 @@ docker-ce:
      5:18.09.0~3-0~ubuntu-xenial 500
 ...
 ```
+
 * Install docker
 ```
 sudo apt-get install -y docker-ce
@@ -56,11 +60,14 @@ sudo systemctl status docker
            └─1191 /usr/bin/dockerd -H unix://
 ...
 ```
+
 * Add user to docker group so that this user can execute docker commands.
 ```
 sudo usermod -aG docker ${USER}
 ```
+
 * Logout the session and login again to refresh the group membership.
+
 * Verify docker by executing info command.
 ```
 docker info |grep 'Server Version'
