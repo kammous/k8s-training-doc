@@ -1,7 +1,7 @@
 +++
 title = "Installation"
 date = 2018-12-29T17:15:52Z
-weight = 5
+weight = 2
 chapter = true
 pre = "<b>2. </b>"
 +++
