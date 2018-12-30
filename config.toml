@@ -9,4 +9,4 @@ home = [ "HTML", "RSS", "JSON"]
 [params]
 themeVariant = "mine"
 editURL = "https://github.com/ansilh/k8s-training-doc/tree/master/content/"
-menu = [ "Introduction", "Installation" ]
+menu = [ "1. Introduction", "2. Installation" ]
