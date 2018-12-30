@@ -11,8 +11,9 @@ pre = "<b>- </b>"
 We need to access the container from outside world and the container running on different hosts have to communicate each other.
 
 Here we will see how can we do it with bridging.
+
 * Traditional networking
-![Network](/images/nw-traditional.PNG?class=shadow)
+![Network](/images/nw-traditional.PNG?classes=shadow)
 
 * Create a veth pair on Host.
 ```
@@ -32,7 +33,7 @@ ip link set veth1 netns bash-nw-namespace
 ip link list
 ```
 * Resulting network
-![Network](/images/nw-namespace.png?class=shadow)
+![Network](/images/nw-namespace.png?classes=shadow)
 
 * Create a Bridge interface
 ```
@@ -51,7 +52,7 @@ brctl addif cbr0 veth0
 brctl show
 ```
 * Resulting network
-![Network](/images/nw-namespace-with-bridge.png?class=shadow)
+![Network](/images/nw-namespace-with-bridge.png?classes=shadow)
 
 * Assign IP to interface
 ```
