@@ -2,7 +2,7 @@
 
 ![Trainer](../images/profile.png?classes=shadow)
 
-#### About the me
+#### About me.!
  - Opensource Evangelist with a decade of experience
  - Certified Kubernetes Administrator.
  - Linux Foundation Certified Engineer.
