@@ -13,7 +13,7 @@ We need to access the container from outside world and the container running on 
 Here we will see how can we do it with bridging.
 
 * Traditional networking
-![Network](/images/nw-traditional.PNG?classes=shadow)
+![Network](/images/nw-traditional.png?classes=shadow)
 
 * Create a veth pair on Host.
 ```
