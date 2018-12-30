@@ -20,7 +20,7 @@ Create a template VM which will be used to clone all needed VMs
 - VM configuration  
     - VM Name : `k8s-master-01`
     - Memory  : 2 GB
-    - CPU     : 1
+    - CPU     : 2
     - Disk    : 100GB
     - NAT network interface : 1
     - HostOnly interface    : 1 (ref. step 1).
@@ -108,6 +108,14 @@ sudo bash -c  "cat <<EOF >>/etc/hosts
 192.168.78.201 k8s-master-01
 192.168.78.202 k8s-worker-01
 EOF"
+```
+
+- Disable swap by commenting out swap_1 LV
+```
+sudo vi /etc/fstab
+```
+```
+# /dev/mapper/k8s--master--01--vg-swap_1 none            swap    sw              0       0
 ```
 - Reboot VM
 ```
