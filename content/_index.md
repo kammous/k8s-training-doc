@@ -17,11 +17,10 @@ Later on it was heavly used for managing internal distributed systems and jobs
 
 * 2019: Journey continues...
 #### About the Trainer
-  <img style="float: left;" src="../images/profile.png" />
 
-  Opensource Evangelist with a decade of experience
-
-  - Certified Kubernetes Administrator.
-  - Linux Foundation Certified Engineer.
-  - AWS Certified Solution Architect Associate.
-  - Red Hat Certified Engineer.
+ ![Trainer](../static/images/profile.png#left)
+ - Opensource Evangelist with a decade of experience
+ - Certified Kubernetes Administrator.
+ - Linux Foundation Certified Engineer.
+ - AWS Certified Solution Architect Associate.
+ - Red Hat Certified Engineer.
