@@ -18,7 +18,7 @@ Later on it was heavly used for managing internal distributed systems and jobs
 * 2019: Journey continues...
 #### About the Trainer
 
- ![Trainer](../static/images/profile.png#left)
+ ![Trainer](../images/profile.png#left)
  - Opensource Evangelist with a decade of experience
  - Certified Kubernetes Administrator.
  - Linux Foundation Certified Engineer.
