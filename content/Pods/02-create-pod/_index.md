@@ -20,7 +20,7 @@ Nothing <i class="fa fa-frown"></i>
 ```bash
 vi pod.yaml
 ```
-```yaml
+{{< highlight yaml "linenos=table" >}}
 apiVersion: v1
 kind: Pod
 metadata:
@@ -29,4 +29,4 @@ spec:
   containers:
   - image: ansilh/demo-coffee
     name: coffee
-```
+{{< / highlight >}}
