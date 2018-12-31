@@ -8,7 +8,7 @@ pre = "<b>- </b>"
 
 # What is Pod
 
-![Pod Overview](pods_overview.svg?classes=shadow&width=20pc)
+![Pod Overview](pods_overview.svg?classes=shadow&width=80pc)
 A Pod is the basic building block of Kubernetes–the smallest and simplest unit in the Kubernetes object model that you create or deploy. A Pod represents a running process on your cluster
 
 The “one-container-per-Pod” model is the most common Kubernetes use case; in this case, you can think of a Pod as a wrapper around a single container, and Kubernetes manages the Pods rather than the containers directly.
