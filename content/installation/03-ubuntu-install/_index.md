@@ -110,6 +110,13 @@ sudo bash -c  "cat <<EOF >>/etc/hosts
 EOF"
 ```
 
+- Add public DNS incase the local one is not responding in NAT
+```
+sudo bash -c  "cat <<EOF >>/etc/resolvconf/resolv.conf.d/tail
+nameserver 8.8.8.8
+EOF"
+```
+
 - Disable swap by commenting out swap_1 LV
 ```
 sudo vi /etc/fstab
@@ -117,9 +124,11 @@ sudo vi /etc/fstab
 ```
 # /dev/mapper/k8s--master--01--vg-swap_1 none            swap    sw              0       0
 ```
+
 - Reboot VM
 ```
 sudo reboot
 ```
+
 - Repeat the steps above for second VM
 - Do a ping test to make sure all VMs can reach each other.
