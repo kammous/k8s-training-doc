@@ -20,7 +20,8 @@ Nothing <i class="fa fa-frown"></i>
 ```bash
 vi pod.yaml
 ```
-{{< highlight yaml "linenos=table" >}}
+
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -29,4 +30,25 @@ spec:
   containers:
   - image: ansilh/demo-coffee
     name: coffee
-{{< / highlight >}}
+```
+
+```js
+grunt.initConfig({
+  assemble: {
+    options: {
+      assets: 'docs/assets',
+      data: 'src/data/*.{json,yml}',
+      helpers: 'src/custom-helpers.js',
+      partials: ['src/partials/**/*.{hbs,md}']
+    },
+    pages: {
+      options: {
+        layout: 'default.hbs'
+      },
+      files: {
+        './': ['src/templates/pages/index.hbs']
+      }
+    }
+  }
+};
+```
