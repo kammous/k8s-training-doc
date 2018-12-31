@@ -1,10 +1,6 @@
 title = "Kubernetes Training"
 theme = "hugo-theme-learn"
 createFromSiteMenusMain = true
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = false
-pygmentsStyle = "dracula"
-pygmentsOptions = [ 'linenos' ]
 # For search functionality
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
