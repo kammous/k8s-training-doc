@@ -21,7 +21,7 @@ Nothing <i class="fa fa-frown"></i>
 vi pod.yaml
 ```
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
