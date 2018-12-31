@@ -57,6 +57,8 @@ coffee-app   1/1     Running   0          27s
 k8s@k8s-master-01:~$
 ```
 
+Now we can see our first Pod <i class="fa fa-smile-beam"></i>
+
 ### Get the IP address of `Pod`
 ```
 k8s@k8s-master-01:~$ kubectl get pods -o wide
