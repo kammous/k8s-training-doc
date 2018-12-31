@@ -14,12 +14,12 @@ Google open-sourced the Kubernetes project in 2014. Kubernetes builds upon a dec
 
 [Read More here](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)
 
-![Container and Kubernetes](../../images/kubernetes.svg)
+![Container and Kubernetes](kubernetes.svg)
 
 
 ### Kubernetes Architecture
 
-![Container and Kubernetes](../../images/kubernetes-architecture.png)
+![Container and Kubernetes](kubernetes-architecture.png)
 
 #### Container runtime
 

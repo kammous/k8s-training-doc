@@ -8,7 +8,7 @@ pre = "<b>- </b>"
 
 # Linux Kernel Architecture
 
-![Kernel](../../images/kernel-architecture.png)
+![Kernel](kernel-architecture.png)
 
 At the top is the user, or application, space. This is where the user applications are executed.
 Below the user space is the kernel space. Here, the Linux kernel exists.

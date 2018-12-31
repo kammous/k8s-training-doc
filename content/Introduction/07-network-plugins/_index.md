@@ -33,7 +33,7 @@ ip link set veth1 netns bash-nw-namespace
 ip link list
 ```
 * Resulting network
-![Network](/images/nw-namespace.png?classes=shadow)
+![Network](nw-namespace.png?classes=shadow)
 
 * Create a Bridge interface
 ```
@@ -52,7 +52,7 @@ brctl addif cbr0 veth0
 brctl show
 ```
 * Resulting network
-![Network](/images/nw-namespace-with-bridge.png?classes=shadow)
+![Network](nw-namespace-with-bridge.png?classes=shadow)
 
 * Assign IP to interface
 ```
