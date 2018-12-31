@@ -21,9 +21,8 @@
  - Deploy Worker
 
 3. Pod
- - kubectl configuration
- - View nodes
  - View Pods
+ - View Nodes
  - Namespaces
  - Create an Nginx Pod
    - Imperative
