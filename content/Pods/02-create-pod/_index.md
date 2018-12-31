@@ -15,3 +15,18 @@ No resources found.
 k8s@k8s-master-01:~$
 ```
 Nothing <i class="fa fa-frown"></i>
+
+### Lets create one using a `YAML` file
+```bash
+vi pod.yaml
+```
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: coffee-app
+spec:
+  containers:
+  - image: ansilh/demo-coffee
+    name: coffee
+```
