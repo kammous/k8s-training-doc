@@ -14,4 +14,4 @@ k8s@k8s-master-01:~$ kubectl get pods
 No resources found.
 k8s@k8s-master-01:~$
 ```
-Nothing '<i class="fa fa-check"></i>'
+Nothing <i class="fa fa-check"></i>
