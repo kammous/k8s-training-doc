@@ -11,5 +11,6 @@ chapter = true
 
 # Pods & Nodes
 
-In this session , we will explore Pods and Nodes
+In this session , we will explore Pods and Nodes.
+
 We will also create a `Coffee` application `Pod`
