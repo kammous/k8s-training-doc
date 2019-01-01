@@ -21,8 +21,10 @@ Here we can Pod spec `Readiness probe`
 Official defention of readinessProbe is , "Periodic probe of container service readiness"
 
 Lets rewrite the Pod specification of Coffee App and add a readiness Probe.
+```shell
+$ vi pod-readiness.yaml
+```
 ```yaml
-vi pod-readiness.yaml
 apiVersion: v1
 kind: Pod
 metadata:
