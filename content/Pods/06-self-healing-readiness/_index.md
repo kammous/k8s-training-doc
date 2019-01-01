@@ -1,7 +1,7 @@
 +++
-menutitle = "Self Healing"
+menutitle = "Self Healing - Readiness"
 date = 2018-12-29T17:15:52Z
-weight = 5
+weight = 6
 chapter = false
 pre = "<b>- </b>"
 +++
