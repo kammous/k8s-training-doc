@@ -6,7 +6,7 @@ chapter = false
 pre = "<b>- </b>"
 +++
 
-# Create a Coffee App Pod - Imperative Way
+# Create Pod - Imperative Way
 
 
 ### Execute `kubectl` command to create a Pod.

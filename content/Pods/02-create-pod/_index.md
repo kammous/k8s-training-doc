@@ -6,7 +6,7 @@ chapter = false
 pre = "<b>- </b>"
 +++
 
-# Create a Coffee App Pod - Declarative Way
+# Pod - Declarative Way
 
 #### Lets Check the running Pods
 ```shell

@@ -6,9 +6,9 @@ weight = 3
 chapter = true
 
 +++
+
 ### Chapter 3
 
-# Pods
+# Pods & Nodes
 
-In this chapter we will explore the basic building block of k8s objects.
-We will create a YAML file and run a `Coffee` app `Pod`.
+In this session , we will expose Pods and Nodes 
