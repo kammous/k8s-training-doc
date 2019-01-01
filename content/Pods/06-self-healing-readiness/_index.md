@@ -6,7 +6,7 @@ chapter = false
 pre = "<b>- </b>"
 +++
 
-# Self Healing
+# Self Healing - Readiness
 
 ### Readiness Probe
 
