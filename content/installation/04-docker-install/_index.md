@@ -66,7 +66,7 @@ $ sudo systemctl status docker
 $ sudo usermod -aG docker ${USER}
 ```
 
-#### Logout the session and login again to refresh the group membership.
+Logout the session and login again to refresh the group membership.
 
 #### Verify docker by executing info command.
 ```shell

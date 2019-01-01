@@ -24,7 +24,7 @@
  - Create a Coffee App
   - Imperative
   - Declarative
-  - View Nodes
+  - Nodes
   - Namespaces
   - Explore Pods and Nodes
 

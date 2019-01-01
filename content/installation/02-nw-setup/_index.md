@@ -7,11 +7,10 @@ pre = "<b>- </b>"
 +++
 
 # VirtualBox network configuration
-- Create HostOnly network with IP range `192.168.78.0`
+- Create HostOnly network ( Default will be 192.168.56.0/24)
   - Open Virtual Box
   - Got to menu and navigate to File ->Host Network Manager
   - Then click "Create"
-  - Modify the network range to `192.168.78.0/24` if its different.
  This will create a Host-Only Network.
 
  DHCP should be disabled on this network.
@@ -23,5 +22,5 @@ pre = "<b>- </b>"
 
 | VBox Host Networking |      
 |---------------|--------------
-| HostOnly      | 172.28.10.0
+| HostOnly      | 192.168.56.0/24
 | NAT           | VBOX Defined

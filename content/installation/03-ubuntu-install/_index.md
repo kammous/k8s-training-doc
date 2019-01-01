@@ -22,10 +22,12 @@ Create a template VM which will be used to clone all needed VMs
     - Memory  : 2 GB
     - CPU     : 2
     - Disk    : 100GB
-    - NAT network interface : 1
     - HostOnly interface    : 1 (ref. step 1).
+    - NAT network interface : 1
 
-NAT interface should be the first interface and Host-Only should be second
+By default , NAT will be the first in network adapter order , change it like below.
+NAT interface should be the second interface
+Host-Only should be the first one
 
 - Install Ubuntu on this VM and go ahead with all default options
  - When asked, provide user name `k8s` and set password
@@ -62,8 +64,8 @@ $ sudo poweroff
 
 - IP Address and Hostname for each VMs
 ```console
-192.168.78.201 k8s-master-01
-192.168.78.202 k8s-worker-01
+192.168.56.201 k8s-master-01
+192.168.56.202 k8s-worker-01
 ```
 
 - Assign IP address and make sure it comes up at boot time.
@@ -74,7 +76,7 @@ $ sudo vi /etc/network/interfaces
 ```properties
 auto enp0s8
 iface enp0s8 inet static
-    address 172.28.10.X #<--- Replace X with corresponding IP octect
+    address 192.168.56.X #<--- Replace X with corresponding IP octect
     netmask 255.255.255.0
 ```
 ```shell
@@ -105,8 +107,8 @@ $ sudo systemd-machine-id-setup
 - Add needed entries in /etc/hosts
 ```bash
 $ sudo bash -c  "cat <<EOF >>/etc/hosts
-172.28.10.201 k8s-master-01
-172.28.10.202 k8s-worker-01
+192.168.56.201 k8s-master-01
+192.168.56.202 k8s-worker-01
 EOF"
 ```
 
