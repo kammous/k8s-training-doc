@@ -6,6 +6,6 @@ chapter = false
 pre = "<b>- </b>"
 +++
 
-# Self Healing
+# Self Healing - Liveness
 
 ### Liveness Probe
