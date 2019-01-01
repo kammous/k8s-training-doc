@@ -104,6 +104,9 @@ InitiatorName=iqn.1993-08.org.debian:01:HOST_NAME  #<--- Append HostName to have
 $ sudo rm /etc/machine-id /var/lib/dbus/machine-id
 $ sudo systemd-machine-id-setup
 ```
+
+- Remove 127.0.1.1 entry from /etc/hosts
+
 - Add needed entries in /etc/hosts
 ```bash
 $ sudo bash -c  "cat <<EOF >>/etc/hosts
