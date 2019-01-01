@@ -41,7 +41,7 @@ k8s@k8s-master-01:~$
 
 ### View status of Pod
 Pod status is `ContainerCreating`
-```zsh
+```ruby
 k8s@k8s-master-01:~$ kubectl get pods
 NAME         READY   STATUS              RESTARTS   AGE
 coffee-app   0/1     ContainerCreating   0          4s
