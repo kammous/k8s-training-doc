@@ -12,5 +12,5 @@ home = [ "HTML", "RSS", "JSON"]
 [params]
 themeVariant = "mine"
 editURL = "https://github.com/ansilh/k8s-training-doc/tree/master/content/"
-menu = [ "Introduction", "Installation", "Pods" ]
+menu = [ "Introduction", "Installation", "Pods & Nodes" ]
 showVisitedLinks = true

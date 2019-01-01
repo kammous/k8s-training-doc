@@ -1,5 +1,5 @@
 +++
-title = "Pods"
+title = "Pods & Nodes"
 menuTitle = "Pods"
 date = 2018-12-29T17:15:52Z
 weight = 3
