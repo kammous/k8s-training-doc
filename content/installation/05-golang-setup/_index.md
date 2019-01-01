@@ -9,8 +9,8 @@ pre = "<b>- </b>"
 # Setup Golang
 
 Download Golang tarball
-```bash
-curl -O https://dl.google.com/go/go1.11.4.linux-amd64.tar.gz
+```shell
+$ curl -O https://dl.google.com/go/go1.11.4.linux-amd64.tar.gz
 ```
 
 Extract the contents
