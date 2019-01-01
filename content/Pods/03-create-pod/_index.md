@@ -17,7 +17,7 @@ k8s@k8s-master-01:~$
 ```
 
 ### Verify `Pod` status
-```
+```bash
 k8s@k8s-master-01:~$ kubectl get pods -o wide
 NAME     READY   STATUS    RESTARTS   AGE   IP            NODE            NOMINATED NODE   READINESS GATES
 coffee   1/1     Running   0          21s   192.168.1.8   k8s-worker-01   <none>           <none>
@@ -25,14 +25,14 @@ k8s@k8s-master-01:~$
 ```
 
 ### Verify `Coffee` App status
-```
+```bash
 $ curl -s 192.168.1.8:9090  |grep 'Serving Coffee'
 <html><head></head><title></title><body><div> <h2>Serving Coffee from</h2><h3>Pod:coffee</h3><h3>IP:192.168.1.8</h3><h3>Node:10.96.0.1</h3><img src="data:image/png;base64,
 k8s@k8s-master-01:~$
 ```
 
 ### Delete pod
-```
+```bash
 k8s@k8s-master-01:~$ kubectl delete pod coffee-app
 pod "coffee-app" deleted
 k8s@k8s-master-01:~$ kubectl get pods
