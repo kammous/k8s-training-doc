@@ -74,8 +74,8 @@ $ sudo systemctl stop networking
 $ sudo vi /etc/network/interfaces
 ```
 ```properties
-auto enp0s8
-iface enp0s8 inet static
+auto enp0s3
+iface enp0s3 inet static
     address 192.168.56.X #<--- Replace X with corresponding IP octect
     netmask 255.255.255.0
 ```
