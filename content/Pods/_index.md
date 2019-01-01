@@ -1,6 +1,6 @@
 +++
 title = "Pods & Nodes"
-menuTitle = "Pods"
+menuTitle = "Pods & Nodes"
 date = 2018-12-29T17:15:52Z
 weight = 3
 chapter = true
