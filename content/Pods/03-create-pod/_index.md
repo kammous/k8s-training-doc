@@ -26,19 +26,24 @@ coffee   1/1     Running   0          19s   192.168.1.15   k8s-worker-01   <none
 ```
 
 #### Start a CentOS container
+```shell
 $ kubectl run centos-pod --image=tutum/centos --restart=Never
 pod/centos-pod created
+```
 
 #### verify status of the Pod ; it should be in Running
+```shell
 $ kubectl get pods
 NAME         READY   STATUS    RESTARTS   AGE
 centos-pod   1/1     Running   0          25s
 coffee       1/1     Running   0          2m10s
+```
 
 #### Logon to CentOS Pod
+```shell
 $ kubectl exec -it centos-pod -- /bin/bash
 [root@centos-pod /]#
-
+```
 
 #### Verify `Coffee` App status
 ```shell
