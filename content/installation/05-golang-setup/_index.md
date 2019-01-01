@@ -10,7 +10,7 @@ pre = "<b>- </b>"
 
 Download Golang tarball
 ```shell
-$ curl -O https://dl.google.com/go/go1.11.4.linux-amd64.tar.gz
+$ echo curl -O https://dl.google.com/go/go1.11.4.linux-amd64.tar.gz
 ```
 
 Extract the contents
