@@ -32,7 +32,7 @@ k8s@k8s-master-01:~$
 ```
 
 ### Delete pod
-```console
+```bash
 k8s@k8s-master-01:~$ kubectl delete pod coffee-app
 pod "coffee-app" deleted
 k8s@k8s-master-01:~$ kubectl get pods

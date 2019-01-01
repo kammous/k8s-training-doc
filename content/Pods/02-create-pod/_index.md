@@ -21,7 +21,7 @@ Nothing <i class="fa fa-frown"></i>
 vi pod.yaml
 ```
 
-```yml
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -41,7 +41,7 @@ k8s@k8s-master-01:~$
 
 ### View status of Pod
 Pod status is `ContainerCreating`
-```ruby
+```bash
 k8s@k8s-master-01:~$ kubectl get pods
 NAME         READY   STATUS              RESTARTS   AGE
 coffee-app   0/1     ContainerCreating   0          4s
