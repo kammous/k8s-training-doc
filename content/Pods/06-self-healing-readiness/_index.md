@@ -17,8 +17,9 @@ You entire application stack might get affected because of this.
 
 So here comes the question , "How can I make sure my application is started, not just the Pod ?"
 
-Here we can Pod spec `Readiness probe`
-Official defention of readinessProbe is , "Periodic probe of container service readiness"
+Here we can use Pod spec, `Readiness probe`.
+
+Official defention of readinessProbe is , "Periodic probe of container service readiness".
 
 Lets rewrite the Pod specification of Coffee App and add a readiness Probe.
 ```shell
