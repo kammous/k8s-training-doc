@@ -8,8 +8,9 @@ pre = "<b>- </b>"
 
 # Pod - Declarative Way
 
-After completing this session , you will be able to create Pod declaratively and will be able to login to check services running on other pods
-So lets get started. 
+After completing this session , you will be able to create Pod declaratively and will be able to login to check services running on other pods.
+
+So lets get started.
 
 #### Lets Check the running Pods
 ```shell
