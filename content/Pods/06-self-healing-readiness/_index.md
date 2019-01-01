@@ -25,6 +25,7 @@ Lets rewrite the Pod specification of Coffee App and add a readiness Probe.
 ```shell
 $ vi pod-readiness.yaml
 ```
+
 ```yaml
 apiVersion: v1
 kind: Pod
