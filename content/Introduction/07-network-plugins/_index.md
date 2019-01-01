@@ -16,50 +16,50 @@ Here we will see how can we do it with bridging.
 ![Network](nw-traditional.png?classes=shadow)
 
 * Create a veth pair on Host.
-```
-ip link add veth0 type veth peer name veth1
-ip link show
+```shell
+$ sudo ip link add veth0 type veth peer name veth1
+$ sudo ip link show
 ```
 
 * Create a network namespace
-```
-ip netns add bash-nw-namespace
-ip netns show
+```shell
+$ sudo ip netns add bash-nw-namespace
+$ sudo ip netns show
 ```
 
 * Connect one end to namespace
-```
-ip link set veth1 netns bash-nw-namespace
-ip link list
+```shell
+$ sudo ip link set veth1 netns bash-nw-namespace
+$ sudo ip link list
 ```
 * Resulting network
 ![Network](nw-namespace.png?classes=shadow)
 
 * Create a Bridge interface
-```
-brctl addbr cbr0
+```shell
+$ sudo brctl addbr cbr0
 ```
 
 * Add an external interface to bridge
-```
-brctl addif cbr0 enp0s9
-brctl show
+```shell
+$ sudo brctl addif cbr0 enp0s9
+$ sudo brctl show
 ```
 
 * Connect other end to a switch
-```
-brctl addif cbr0 veth0
-brctl show
+```shell
+$ sudo brctl addif cbr0 veth0
+$ sudo brctl show
 ```
 * Resulting network
 ![Network](nw-namespace-with-bridge.png?classes=shadow)
 
 * Assign IP to interface
-```
-ip netns exec bash-nw-namespace bash
-ip addr add 192.168.56.10/24 dev veth1
-ip link set lo up
-ip link set dev veth1 up
+```shell
+$ sudo ip netns exec bash-nw-namespace bash
+$ sudo ip addr add 192.168.56.10/24 dev veth1
+$ sudo ip link set lo up
+$ sudo ip link set dev veth1 up
 ```
 
 * Access container IP from outside

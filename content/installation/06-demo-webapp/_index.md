@@ -8,16 +8,16 @@ pre = "<b>- </b>"
 # Build a Demo WebApp
 
 Create a directory for the demo app.
-```
-mkdir -p ${GOPATH}/src/github.com/ansilh/demo-webapp
+```shell
+$ mkdir -p ${GOPATH}/src/github.com/ansilh/demo-webapp
 ```
 
 Create demo-webapp.go file
-```
-vi ${GOPATH}/src/github.com/ansilh/demo-webapp/demo-webapp.go
+```shell
+$ vi ${GOPATH}/src/github.com/ansilh/demo-webapp/demo-webapp.go
 ```
 
-```
+```go
 package main
 
 import (
@@ -40,14 +40,14 @@ func main() {
 ```
 
 Build a static binary
-```
-cd $GOPATH/src/github.com/ansilh/demo-webapp
-CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -ldflags="-w -s" -o $GOPATH/bin/demo-webapp
+```shell
+$ cd $GOPATH/src/github.com/ansilh/demo-webapp
+$ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -ldflags="-w -s" -o $GOPATH/bin/demo-webapp
 ```
 
 Execute the program
-```
-demo-webapp
+```shell
+$ demo-webapp
 ```
 Open the browser and check if you can see the response using IP:9090
 If you see the output “404 – Page not found – This is a dummy default backend” indicates that the program is working

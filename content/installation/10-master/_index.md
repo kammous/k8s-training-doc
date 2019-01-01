@@ -9,25 +9,25 @@ pre = "<b>- </b>"
 # Deploy master Node (k8s-master-01)
 
 Initialize kubeadm with pod IP range
-```
-sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=192.168.56.201
+```shell
+$ sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=192.168.56.201
 ```
 
 Configure `kubectl`
-```
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```shell
+$ mkdir -p $HOME/.kube
+$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
 Verify master node status
-```
-kubectl cluster-info
+```shell
+$ kubectl cluster-info
 ```
 
 Output will be like below
 
-```
+```console
 Kubernetes master is running at https://192.168.56.201:6443
 KubeDNS is running at https://192.168.56.201:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 

@@ -11,18 +11,18 @@ pre = "<b>- </b>"
 * Create a [Docker Hub account](https://hub.docker.com/)
 
 * Let’s create a directory to store the Dockerfile
-```
-mkdir ~/demo-webapp
+```shell
+$ mkdir ~/demo-webapp
 ```
 * Copy the pre-built program
-```
-cp $GOPATH/bin/demo-webapp ~/demo-webapp/
+```shell
+$ cp $GOPATH/bin/demo-webapp ~/demo-webapp/
 ```
 
 * Create a Dockerfile.
-```
-cd ~/demo-webapp/
-vi Dockerfile
+```shell
+$ cd ~/demo-webapp/
+$ vi Dockerfile
 ```
 ```
 FROM scratch
@@ -33,21 +33,21 @@ CMD ["/demo-webapp"]
 ```
 
 * Build the docker image
-```
-sudo docker build -t <docker login name>/demo-webapp .
+```shell
+$ sudo docker build -t <docker login name>/demo-webapp .
 Eg:-
-sudo docker build -t ansilh/demo-webapp .
+$ sudo docker build -t ansilh/demo-webapp .
 ```
 
 * Login to Docker Hub using your credentials
-```
-docker login
+```shell
+$ docker login
 ```
 
 * Push image to Docker hub
-```
-docker push <docker login name>/demo-webapp
+```shell
+$ docker push <docker login name>/demo-webapp
 Eg:-
-docker push ansilh/demo-webapp
+$ docker push ansilh/demo-webapp
 ```
 Congratulations ! . Now the image you built is available in Docker Hub and we can use this image to run containers in upcoming

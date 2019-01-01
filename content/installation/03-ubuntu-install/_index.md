@@ -35,25 +35,25 @@ NAT interface should be the first interface and Host-Only should be second
 
 - After restart , make sure NAT interface is up
 - Login to the template VM with user `k8s` and execute below commands to install latest patches.
-```
+```shell
 $ sudo apt-get update
 $ sudo apt-get upgrade
 ```
 - Poweroff template VM
-```
+```shell
 $ sudo poweroff
 ```
 - Open CMD and execute below commands to create all needed VMs.
   You can replace the value of `DRIVER_NAME` with a drive which is having enough free space (~50GB)
 - Windows
-```
+```PowerShell
  set DRIVE_NAME=D
  cd C:\Program Files\Oracle\VirtualBox
  VBoxManage.exe clonevm "k8s-master-01" --name "k8s-worker-01" --groups "/K8S Training" --basefolder "%DRIVE_NAME%:\VMs" --register
 ```
 
 - Mac or Linux (Need to test)
-```
+```shell
  DRIVE_NAME=${HOME}
  VBoxManage clonevm "k8s-master-01" --name "k8s-worker-01" --groups "/K8S Training" --basefolder ${DRIVE_NAME}/VMs" --register
 ```
@@ -61,73 +61,73 @@ $ sudo poweroff
 ##### Start VMs one by one and perform below
 
 - IP Address and Hostname for each VMs
-```
+```console
 192.168.78.201 k8s-master-01
 192.168.78.202 k8s-worker-01
 ```
 
 - Assign IP address and make sure it comes up at boot time.
+```shell
+$ sudo systemctl stop networking
+$ sudo vi /etc/network/interfaces
 ```
-sudo systemctl stop networking
-sudo vi /etc/network/interfaces
-```
-```
+```properties
 auto enp0s8
 iface enp0s8 inet static
     address 172.28.10.X #<--- Replace X with corresponding IP octect
     netmask 255.255.255.0
 ```
-```
-sudo systemctl restart networking
+```shell
+$ sudo systemctl restart networking
 ```
 
 - You may access the VM using the IP via SSH and can complete all remaining steps from that session (for copy paste :) )
 - Change Host name
-```
-HOST_NAME=<host name> # <--- Replace <host name> with corresponding one
-sudo hostnamectl set-hostname ${HOST_NAME} --static --transient
+```shell
+$ HOST_NAME=<host name> # <--- Replace <host name> with corresponding one
+$ sudo hostnamectl set-hostname ${HOST_NAME} --static --transient
 ```
 - Regenrate SSH Keys
-```
-sudo /bin/rm -v /etc/ssh/ssh_host_*
-sudo dpkg-reconfigure openssh-server
+```shell
+$ sudo /bin/rm -v /etc/ssh/ssh_host_*
+$ sudo dpkg-reconfigure openssh-server
 ```
 - Change iSCSI initiator IQN
-```
-sudo vi /etc/iscsi/initiatorname.iscsi
+```shell
+$ sudo vi /etc/iscsi/initiatorname.iscsi
 InitiatorName=iqn.1993-08.org.debian:01:HOST_NAME  #<--- Append HostName to have unique iscsi iqn
 ```  
 - Change Machine UUID
-```
-sudo rm /etc/machine-id /var/lib/dbus/machine-id
-sudo systemd-machine-id-setup
+```shell
+$ sudo rm /etc/machine-id /var/lib/dbus/machine-id
+$ sudo systemd-machine-id-setup
 ```
 - Add needed entries in /etc/hosts
-```
-sudo bash -c  "cat <<EOF >>/etc/hosts
+```bash
+$ sudo bash -c  "cat <<EOF >>/etc/hosts
 172.28.10.201 k8s-master-01
 172.28.10.202 k8s-worker-01
 EOF"
 ```
 
 - Add public DNS incase the local one is not responding in NAT
-```
-sudo bash -c  "cat <<EOF >>/etc/resolvconf/resolv.conf.d/tail
+```bash
+$ sudo bash -c  "cat <<EOF >>/etc/resolvconf/resolv.conf.d/tail
 nameserver 8.8.8.8
 EOF"
 ```
 
 - Disable swap by commenting out swap_1 LV
-```
-sudo vi /etc/fstab
+```shell
+$ sudo vi /etc/fstab
 ```
 ```
 # /dev/mapper/k8s--master--01--vg-swap_1 none            swap    sw              0       0
 ```
 
 - Reboot VM
-```
-sudo reboot
+```shell
+$ sudo reboot
 ```
 
 - Repeat the steps above for second VM

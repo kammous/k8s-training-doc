@@ -14,27 +14,27 @@ Verify the MAC address and product_uuid are unique for every node
 - `sudo cat /sys/class/dmi/id/product_uuid`
 
 Download pre-requisites
-```
-sudo apt-get update && sudo apt-get install -y apt-transport-https curl
+```shell
+$ sudo apt-get update && sudo apt-get install -y apt-transport-https curl
 ```
 
 Add gpg key for apt
-```
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg |sudo apt-key add -
+```shell
+$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg |sudo apt-key add -
 ```
 
 Add apt repository
-```
-cat <<EOF |sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+```bash
+$ cat <<EOF |sudo tee -a /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 ```
 
 Install kubelet , kubeadm and  kubectl
-```
-sudo apt-get update
-sudo apt-get install -y kubelet kubeadm kubectl
-sudo apt-mark hold kubelet kubeadm kubectl
+```shell
+$ sudo apt-get update
+$ sudo apt-get install -y kubelet kubeadm kubectl
+$ sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
 Repeat the same steps on worker node

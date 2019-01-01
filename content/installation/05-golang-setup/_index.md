@@ -10,17 +10,17 @@ pre = "<b>- </b>"
 
 Download Golang tarball
 ```shell
-$ echo curl -O https://dl.google.com/go/go1.11.4.linux-amd64.tar.gz
+$ curl -O https://dl.google.com/go/go1.11.4.linux-amd64.tar.gz
 ```
 
 Extract the contents
-```bash
-tar -xvf go1.11.4.linux-amd64.tar.gz
+```shell
+$ tar -xvf go1.11.4.linux-amd64.tar.gz
 ```
 
 Move the contents to /usr/local directory
-```bash
-sudo mv go /usr/local/
+```shell
+$ sudo mv go /usr/local/
 ```
 
 Add the environmental variable GOPATH to .profile
@@ -32,31 +32,31 @@ EOF
 ```
 
 Create the work directory
-```bash
-mkdir $HOME/work
+```shell
+$ mkdir $HOME/work
 ```
 
 Load the profile
-```bash
-source ~/.profile
+```shell
+$ source ~/.profile
 ```
 
 Verify Golang setup
-```bash
-go version
+```shell
+$ go version
 ```
 ```console
 go version go1.11.4 linux/amd64
 ```
 
 Create a directory tree to map to a github repository
-```bash
-mkdir -p $GOPATH/src/github.com/ansilh/golang-demo
+```shell
+$ mkdir -p $GOPATH/src/github.com/ansilh/golang-demo
 ```
 
 Create a hello world golang program
-```bash
-vi $GOPATH/src/github.com/ansilh/golang-demo/main.go
+```shell
+$ vi $GOPATH/src/github.com/ansilh/golang-demo/main.go
 ```
 
 Paste below code  
@@ -70,13 +70,13 @@ func main(){
 ```
 
 Build and install the program
-```bash
+```console
 go install github.com/ansilh/golang-demo
 ```
 
 Execute the program to see the output
-```bash
-golang-demo
+```shell
+$ golang-demo
 ```
 ```console
 Hello World.!

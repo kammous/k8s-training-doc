@@ -11,23 +11,23 @@ pre = "<b>- </b>"
 In this session, we will install and setup docker in a simple and easy way on Ubuntu 16.04.
 
 * Add gpg key to aptitude
-```
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```shell
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
 * Add repository
-```
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+```shell
+$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 ```
 
 * Refresh repository
-```
-sudo apt-get update
+```shell
+$ sudo apt-get update
 ```
 
 * Verify whether docker is available in repo or not
-```
-sudo apt-cache policy docker-ce
+```shell
+$ sudo apt-cache policy docker-ce
 ```
 ```
 docker-ce:
@@ -39,13 +39,13 @@ docker-ce:
 ```
 
 * Install docker
-```
-sudo apt-get install -y docker-ce
+```shell
+$ sudo apt-get install -y docker-ce
 ```
 
 * Make sure docker is running
-```
-sudo systemctl status docker
+```shell
+$ sudo systemctl status docker
 ```
 ```
 ● docker.service - Docker Application Container Engine
@@ -62,16 +62,16 @@ sudo systemctl status docker
 ```
 
 * Add user to docker group so that this user can execute docker commands.
-```
-sudo usermod -aG docker ${USER}
+```shell
+$ sudo usermod -aG docker ${USER}
 ```
 
 * Logout the session and login again to refresh the group membership.
 
 * Verify docker by executing info command.
+```shell
+$ docker info |grep 'Server Version'
 ```
-docker info |grep 'Server Version'
-```
-```
+```console
 Server Version: 18.09.0
 ```
