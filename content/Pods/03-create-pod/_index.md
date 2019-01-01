@@ -10,7 +10,7 @@ pre = "<b>- </b>"
 
 
 ### Execute `kubectl` command to create a Pod.
-```
+```bash
 k8s@k8s-master-01:~$ kubectl run coffee --image=ansilh/demo-coffee --restart=Never
 pod/coffee created
 k8s@k8s-master-01:~$

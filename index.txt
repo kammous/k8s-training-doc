@@ -21,13 +21,12 @@
  - Deploy Worker
 
 3. Pod
- - View Pods
- - View Nodes
- - Namespaces
- - Create an Nginx Pod
-   - Imperative
-   - Declarative
- - Explore Pod
+ - Create a Coffee App
+  - Imperative
+  - Declarative
+  - View Nodes
+  - Namespaces
+  - Explore Pods and Nodes
 
 4. Self Healing
  - Readiness Probe
