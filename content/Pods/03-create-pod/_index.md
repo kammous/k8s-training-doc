@@ -39,3 +39,7 @@ k8s@k8s-master-01:~$ kubectl get pods
 No resources found.
 k8s@k8s-master-01:~$
 ```
+
+```xml
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+```
