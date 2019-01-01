@@ -2,7 +2,7 @@ title = "Kubernetes Training"
 theme = "hugo-theme-learn"
 createFromSiteMenusMain = true
 # For search functionality
-pygmentsUseClassic            = false
+pygmentsUseClassic            = true
 pygmentsCodeFences            = true
 pygmentsCodeFencesGuessSyntax = true
 pygmentsUseClasses            = true
