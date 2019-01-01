@@ -9,9 +9,9 @@ pre = "<b>- </b>"
 # Namespaces
 
 #### What is a namespace
-
-Suppose you have two departments in you organization and both departments have application which needs more fine grained control
-We can use namespaces to separate the workload of each departments
+We have see namespaces in Linux , which ideally isolates objects and here also the concept is same but serves a different purpose.
+Suppose you have two departments in you organization and both departments have application which needs more fine grained control.
+We can use namespaces to separate the workload of each departments.
 
 By default kubernetes will have three namespace
 
