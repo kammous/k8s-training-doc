@@ -32,6 +32,7 @@ $ sudo ip netns show
 $ sudo ip link set veth1 netns bash-nw-namespace
 $ sudo ip link list
 ```
+
 * Resulting network
 ![Network](nw-namespace.png?classes=shadow)
 
@@ -51,6 +52,7 @@ $ sudo brctl show
 $ sudo brctl addif cbr0 veth0
 $ sudo brctl show
 ```
+
 * Resulting network
 ![Network](nw-namespace-with-bridge.png?classes=shadow)
 
