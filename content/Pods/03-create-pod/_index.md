@@ -32,14 +32,10 @@ k8s@k8s-master-01:~$
 ```
 
 ### Delete pod
-```bash
+```shell
 k8s@k8s-master-01:~$ kubectl delete pod coffee-app
 pod "coffee-app" deleted
 k8s@k8s-master-01:~$ kubectl get pods
 No resources found.
 k8s@k8s-master-01:~$
-```
-
-```xml
-<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 ```
