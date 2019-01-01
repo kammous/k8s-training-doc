@@ -74,7 +74,7 @@ $ curl -s 192.168.1.7:9090  |grep 'Serving Coffee'
 ```
 
 ### Delete pod
-```
+```bash
 k8s@k8s-master-01:~$ kubectl delete pod coffee-app
 pod "coffee-app" deleted
 k8s@k8s-master-01:~$ kubectl get pods
