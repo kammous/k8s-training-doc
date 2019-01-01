@@ -10,7 +10,7 @@ pre = "<b>- </b>"
 
 #### Initialize kubeadm with pod IP range
 ```shell
-$ sudo kubeadm init --pod-network-cidr=10.10.0.0/16 --apiserver-advertise-address=192.168.56.201
+$ sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=192.168.56.201 --service-cidr=172.16.0.0/16
 ```
 
 #### Configure `kubectl`
