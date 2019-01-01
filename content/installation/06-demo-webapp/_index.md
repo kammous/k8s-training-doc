@@ -7,12 +7,12 @@ pre = "<b>- </b>"
 +++
 # Build a Demo WebApp
 
-Create a directory for the demo app.
+#### Create a directory for the demo app.
 ```shell
 $ mkdir -p ${GOPATH}/src/github.com/ansilh/demo-webapp
 ```
 
-Create demo-webapp.go file
+#### Create demo-webapp.go file
 ```shell
 $ vi ${GOPATH}/src/github.com/ansilh/demo-webapp/demo-webapp.go
 ```
@@ -39,13 +39,13 @@ func main() {
 }
 ```
 
-Build a static binary
+#### Build a static binary
 ```shell
 $ cd $GOPATH/src/github.com/ansilh/demo-webapp
 $ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -ldflags="-w -s" -o $GOPATH/bin/demo-webapp
 ```
 
-Execute the program
+#### Execute the program
 ```shell
 $ demo-webapp
 ```

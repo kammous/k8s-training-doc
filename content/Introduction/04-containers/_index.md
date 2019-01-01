@@ -12,19 +12,19 @@ Using namespaces , we can start a process which will be completely isolated from
 
 ### Create root File System
 
-* Create directory to store rootfs contents
+#### Create directory to store rootfs contents
 ```bash
 $ mkdir -p /root/busybox/rootfs
 $ CONTAINER_ROOT=/root/busybox/rootfs
 $ cd ${CONTAINER_ROOT}
 ```
 
-* Download busybox binary
+#### Download busybox binary
 ```shell
 $ wget https://busybox.net/downloads/binaries/1.28.1-defconfig-multiarch/busybox-x86_64
 ```
 
-* Create needed directories and symlinks
+#### Create needed directories and symlinks
 ```bash
 $ mv busybox-x86_64 busybox
 $ chmod 755 busybox
@@ -40,12 +40,12 @@ done
 
 ### Start Container
 
-* Start a shell in new contianer
+#### Start a shell in new contianer
 ```shell
 $ unshare --mount --uts --ipc --net --pid --fork --user --map-root-user chroot ${CONTAINER_ROOT} /bin/sh
 ```
 
-* Mount essential kernel structures
+#### Mount essential kernel structures
 ```shell
 $ mount -t proc none /proc
 $ mount -t sysfs none /sys
@@ -54,7 +54,7 @@ $ mount -t tmpfs none /tmp
 
 ### Configure networking
 
-* From Host system , create a veth pair and then map that to container
+#### From Host system , create a veth pair and then map that to container
 ```shell
 $ sudo ip link add vethlocal type veth  peer name vethNS
 $ sudo ip link set vethlocal up
@@ -63,4 +63,4 @@ $ sudo ps -ef |grep '/bin/sh'
 $ sudo ip link set vethNS netns <pid of /bin/sh>
 ```
 
-* From container , execute `ip link`
+#### From container , execute `ip link`

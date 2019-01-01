@@ -8,7 +8,7 @@ pre = "<b>- </b>"
 
 # Container management using Docker
 
-Start a Container
+#### Start a Container
 - Here we map port 80 of host to port 9090 of cotainer
 - Verify application from browser
 - Press Ctrl+c to exit container
@@ -17,19 +17,19 @@ Start a Container
 $ docker run -p 80:9090 ansilh/demo-webapp
 ```
 
-Start a Container in detach mode
+#### Start a Container in detach mode
 ```shell
 $ docker run -d -p 80:9090 ansilh/demo-webapp
 ```
 
-List Container
+#### List Container
 ```shell
 $ docker ps
 CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS              PORTS                  NAMES
 4c8364e0d031        ansilh/demo-webapp   "/demo-webapp"      11 seconds ago      Up 10 seconds       0.0.0.0:80->9090/tcp   zen_gauss
 ```
 
-List all containers including stopped containers
+#### List all containers including stopped containers
 ```shell
 $ docker ps -a
 CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS                     PORTS                  NAMES
@@ -37,29 +37,29 @@ CONTAINER ID        IMAGE                COMMAND             CREATED            
 acb01851c20a        ansilh/demo-webapp   "/demo-webapp"      2 minutes ago       Exited (2) 2 minutes ago                          condescending_antonelli
 ```
 
-List resource usage (Press Ctrl+c to exit)
+#### List resource usage (Press Ctrl+c to exit)
 ```shell
 $ docker stats zen_gauss
 ```
 
-Stop Container
+#### Stop Container
 ```shell
 $ docker stop zen_gauss
 ```
 
-List images
+#### List images
 ```shell
 $ docker images
 REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
 ansilh/demo-webapp   latest              b7c5e17ae85e        8 minutes ago       4.81MB
 ```
 
-Remove containers
+#### Remove containers
 ```shell
 $ docker rm zen_gauss
 ```
 
-Delete images
+#### Delete images
 ```shell
 $ docker rmi ansilh/demo-webapp
 ```
