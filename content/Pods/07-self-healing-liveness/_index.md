@@ -9,3 +9,32 @@ pre = "<b>- </b>"
 # Self Healing - Liveness
 
 ### Liveness Probe
+
+Lets assume the application failed after readiness probe execution completes
+Again we are back to service unavailability
+
+To avoid this , we need a liveness check which will do a periodic health check after Pod start running or readiness probe completes.
+
+Lets rewrite the Pod specification of Coffee App and add a liveness Probe.
+```shell
+$ vi pod-readiness.yaml
+```
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: coffee-app
+spec:
+  containers:
+  - image: ansilh/demo-coffee
+    name: coffee
+    readinessProbe:
+     initialDelaySeconds: 10
+     httpGet:
+      port: 9090
+    livenessProbe:
+     periodSeconds: 10
+     httpGet:
+      port: 9090
+```

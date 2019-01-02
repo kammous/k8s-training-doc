@@ -36,6 +36,7 @@ spec:
   - image: ansilh/demo-coffee
     name: coffee
     readinessProbe:
+     initialDelaySeconds: 10
      httpGet:
       port: 9090
 ```
