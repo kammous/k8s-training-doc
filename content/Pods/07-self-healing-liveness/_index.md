@@ -34,7 +34,7 @@ spec:
      httpGet:
       port: 9090
     livenessProbe:
-     periodSeconds: 10
+     periodSeconds: 5
      httpGet:
       port: 9090
 ```
