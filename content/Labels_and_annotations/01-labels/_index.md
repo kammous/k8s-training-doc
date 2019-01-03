@@ -84,8 +84,8 @@ k8s@k8s-master-01:~$
 You can add as many as label you want
 We can add a prefix like app   ( eg: app/dev=true ) which is also a valid label
 
-Limitations| 
-----------|
-Prefix | DNS subdomain with 256 characters
-Key    | 63 characters
-Value  | 63 characters
+|Limitations|
+|----------|
+|Prefix | DNS subdomain with 256 characters
+|Key    | 63 characters
+|Value  | 63 characters
