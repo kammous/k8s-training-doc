@@ -90,3 +90,28 @@ We can add a prefix like `app`   ( eg: `app/dev=true` ) which is also a valid la
 |Prefix | DNS subdomain with 256 characters |
 |Key    | 63 characters |
 |Value  | 63 characters |
+
+#### Remove labels
+
+See the labels of  coffee-app
+```shell
+k8s@k8s-master-01:~$ kubectl get pods --show-labels
+NAME           READY   STATUS    RESTARTS   AGE   LABELS
+coffee-app     1/1     Running   0          28m   app=frontend,run=coffee-app
+coffee-app02   1/1     Running   0          24m   run=coffee-app02
+```
+
+Remove the `app` label
+```shell
+k8s@k8s-master-01:~$ kubectl label pod coffee-app app-
+pod/coffee-app labeled
+```
+
+Resulting output
+```shell
+k8s@k8s-master-01:~$ kubectl get pods --show-labels
+NAME           READY   STATUS    RESTARTS   AGE   LABELS
+coffee-app     1/1     Running   0          29m   run=coffee-app
+coffee-app02   1/1     Running   0          24m   run=coffee-app02
+k8s@k8s-master-01:~$
+```
