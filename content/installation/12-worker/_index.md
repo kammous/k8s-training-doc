@@ -29,7 +29,7 @@ $ kubectl get pods -n kube-system |nl
 ```
 
 #### Output
-```console
+```yaml
  1  NAME                                    READY   STATUS    RESTARTS   AGE
  2  calico-node-2pwv9                       2/2     Running   0          20m
  3  calico-node-hwnfh                       2/2     Running   0          19m

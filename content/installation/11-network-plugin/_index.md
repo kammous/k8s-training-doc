@@ -41,7 +41,7 @@ $ kubectl apply -f calico.yaml
 ```
 
 #### Make sure the `READY` status should show same value on left and right side of `/` and  `Pod` `STATUS` should be `Running`
-```yaml
+```shel
 $ kubectl get pods -n kube-system |nl
 ```
 
