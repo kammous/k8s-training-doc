@@ -20,7 +20,7 @@ wget https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation
 
 #### Edit CALICO_IPV4POOL_CIDR value to 192.168.10.0/24 (To avoid node IP range conflict)
 Change
-```
+```yaml
 - name: CALICO_IPV4POOL_CIDR
   value: "192.168.10.0/24"
 ```
@@ -45,7 +45,7 @@ $ kubectl apply -f calico.yaml
 $ kubectl get pods -n kube-system |nl
 ```
 
-```console
+```yaml
 1  NAME                                    READY   STATUS    RESTARTS   AGE
 2  calico-node-2pwv9                       2/2     Running   0          20m
 3  coredns-86c58d9df4-d9q2l                1/1     Running   0          21m
