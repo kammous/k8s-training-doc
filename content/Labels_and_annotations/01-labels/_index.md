@@ -42,7 +42,7 @@ k8s@k8s-master-01:~$
 ```
 
 As you can see above , the lables is `run=coffee-app` which is a key value pair - `key` is `run` `value` is `coffee-app`.
-When we run Pod imperatively , `kubectl` ass this label to Pod
+When we run Pod imperatively , `kubectl` ass this label to Pod.
 
 #### Add custom label to Pod
 
@@ -53,18 +53,18 @@ pod/coffee-app labeled
 k8s@k8s-master-01:~$
 ```
 
-Here we have add a label `app=frontend` to pod `coffee-app`
+Here we have add a label `app=frontend` to pod `coffee-app`.
 
 #### Use label selectors
 
-Lets start another coffee application pod with name coffee-app02
+Lets start another coffee application pod with name coffee-app02.
 ```shell
 k8s@k8s-master-01:~$ kubectl run coffee-app02 --image=ansilh/demo-coffee --restart=Never
 pod/coffee-app02 created
 k8s@k8s-master-01:~$
 ```
 
-Now we have two Pods
+Now we have two Pods.
 ```
 k8s@k8s-master-01:~$ kubectl get pods --show-labels
 NAME           READY   STATUS    RESTARTS   AGE    LABELS
@@ -73,7 +73,7 @@ coffee-app02   1/1     Running   0          20s    run=coffee-app02
 k8s@k8s-master-01:~$
 ```
 
-Lets see how can I select the Pods with label  app=frontend
+Lets see how can I select the Pods with label  app=frontend.
 ```shell
 k8s@k8s-master-01:~$ kubectl get pods --selector=app=frontend
 NAME         READY   STATUS    RESTARTS   AGE
@@ -81,8 +81,9 @@ coffee-app   1/1     Running   0          6m52s
 k8s@k8s-master-01:~$
 ```
 
-You can add as many as label you want
-We can add a prefix like app   ( eg: app/dev=true ) which is also a valid label
+You can add as many as label you want.
+
+We can add a prefix like `app`   ( eg: `app/dev=true` ) which is also a valid label.
 
 |Limitations||
 |-------|---|
