@@ -30,6 +30,15 @@
   - Readiness Probe
   - Liveness Probe
 
+15. Labels & Annotations
+
+   - Labeling
+   - Annotations
+   - Labeling of Nodes
+   - Schedule Pod based on labels on node.
+
+=============================
+
 5. Services
  - Expose Pod
  - LoadBalancer
@@ -82,12 +91,6 @@
  - How it differs from ReplicaSet
  - Create a DaemonSet to run nginx on all worker nodes
 
-15. Labels
- - Labeling of Nodes
- - Labeling of Pods
- - How to create custom labels
- - Schedule Pod based on labels
- - Manually add and remove Pod from Deployment
 
 16. ConfigMaps
  - Create configmap from variable
