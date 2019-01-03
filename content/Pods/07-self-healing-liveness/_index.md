@@ -8,7 +8,7 @@ pre = "<b>- </b>"
 
 # Self Healing - Liveness
 
-### Liveness Probe
+#### Liveness Probe
 
 Lets assume the application failed after readiness probe execution completes
 Again we are back to service unavailability
@@ -17,7 +17,7 @@ To avoid this , we need a liveness check which will do a periodic health check a
 
 Lets rewrite the Pod specification of Coffee App and add a liveness Probe.
 ```shell
-$ vi pod-readiness.yaml
+$ vi pod-liveiness.yaml
 ```
 
 ```yaml
@@ -37,4 +37,9 @@ spec:
      periodSeconds: 5
      httpGet:
       port: 9090
+```
+
+#### Create `Pod`
+```shell
+$ kubectl create -f pod-liveness.yaml
 ```

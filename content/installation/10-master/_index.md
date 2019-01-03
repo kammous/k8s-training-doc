@@ -1,7 +1,7 @@
 +++
 menutitle = "Deploy master node"
 date = 2018-12-29T17:15:52Z
-weight = 14
+weight = 13
 chapter = false
 pre = "<b>- </b>"
 +++
@@ -10,7 +10,7 @@ pre = "<b>- </b>"
 
 #### Initialize kubeadm with pod IP range
 ```shell
-$ sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=192.168.56.201 --service-cidr=172.16.0.0/16
+$ sudo kubeadm init --apiserver-advertise-address=192.168.56.201 --pod-network-cidr=10.10.0.0/16  --service-cidr=192.168.10.0/24
 ```
 
 #### Configure `kubectl`
@@ -34,3 +34,5 @@ KubeDNS is running at https://192.168.56.201:6443/api/v1/namespaces/kube-system/
 To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 ```
+
+#### Move to next session to deploy network plugin.

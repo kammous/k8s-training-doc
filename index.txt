@@ -27,10 +27,8 @@
   - Nodes
   - Namespaces
   - Explore Pods and Nodes
-
-4. Self Healing
- - Readiness Probe
- - Liveness Probe
+  - Readiness Probe
+  - Liveness Probe
 
 5. Services
  - Expose Pod
