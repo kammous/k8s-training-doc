@@ -18,7 +18,7 @@ $ kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernete
 wget https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml
 ```
 
-#### Edit CALICO_IPV4POOL_CIDR value to 192.168.0.0/24 (To avoid node IP range conflict)
+#### Edit CALICO_IPV4POOL_CIDR value to 192.168.10.0/24 (To avoid node IP range conflict)
 Change
 ```
 - name: CALICO_IPV4POOL_CIDR
@@ -26,7 +26,7 @@ Change
 ```
 
 #### Add `name: IP_AUTODETECTION_METHOD` & `value: "can-reach=192.168.56.1"` (This IP should be the host only network ip on your laptop)
-```
+```yaml
 ...
 image: quay.io/calico/node:v3.3.2
 env:
