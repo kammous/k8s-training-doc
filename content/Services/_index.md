@@ -1,15 +1,15 @@
 +++
-title = "YAML Crash course"
-menuTitle = "YAML Crash course"
+title = "Services"
+menuTitle = "Services"
 date = 2018-12-29T17:15:52Z
-weight = 5
+weight = 6
 chapter = true
 
 +++
 
-### Chapter 5
+### Chapter 6
 
-# YAML crash course
+# Services and Service Discovery
 
-In this session we will learn k8s YAML specification and object types.
-We will cover only k8s dependent YAML specification
+In this session we will solve the maze
+![maze](services.png)
