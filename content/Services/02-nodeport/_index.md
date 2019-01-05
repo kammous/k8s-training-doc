@@ -1,7 +1,7 @@
 +++
-menutitle = "Expose Pod"
+menutitle = "NodePort"
 date = 2018-12-29T17:15:52Z
-weight = 1
+weight = 2
 chapter = false
 pre = "<b>- </b>"
 +++
