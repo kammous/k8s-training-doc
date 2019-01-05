@@ -62,10 +62,4 @@ $ sudo netstat -tnlup |grep 30836
 tcp6       0      0 :::30391                :::*                    LISTEN      2785/kube-proxy
 ```
 
-
-kube-proxy watches the Kubernetes master for the addition and removal of Service and Endpoints objects.
-
-(We will discuss about `Endpoints` later in this session.)
-
-For each `Service`,  it opens a port (randomly chosen) on the local node. Any connections to this “proxy port” will be proxied to one of the Service’s backend Pods (as reported in Endpoints). Lastly, it installs iptables rules which capture traffic to the Service’s `clusterIP` (which is virtual) and Port and redirects that traffic to the proxy port which proxies the backend Pod.
-![NodePort](pod-service-nodeport.png)
+Now you can open browser and access the `Coffee` app using URL `http://192.168.56.201:30391`

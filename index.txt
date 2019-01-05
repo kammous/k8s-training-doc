@@ -37,19 +37,17 @@
    - Labeling of Nodes
    - Schedule Pod based on labels on node.
 
-=============================
+
 
 5. Services
  - Expose Pod
- - LoadBalancer
  - NodePort
  - ClusterIP
- - None
-
+=============================
 6. Multi-Container Pod
  - Pod with two containers
-   - Nginx Pod
-   - CentOS Pod
+   - Coffee Pod
+   - Tea Pod
  - Schedule a Pod on specific node
 
 7. Volume & Volume mounts
@@ -78,13 +76,13 @@
  - Create a Pod in new namespace
  - List all objects in a namespace
 
-12. Resource allocation and Limits
- - Apply resource request and Limits to Pod
+12. Quota
  - Apply limit to namespace
 
 13. ReplicaSet
  - Create a replicaset with 3 Nginx replicas
  - Delete one Pod and observe how rs behaves
+ - Delete replicaset without deleting Pods
 
 14. DaemonSet
  - Why we need DaemonSet
@@ -140,3 +138,5 @@
  - Targetd configuration
  - Storage Class
  - Mount volume from Dynamic Volume Provisioner
+
+26. Stateful sets

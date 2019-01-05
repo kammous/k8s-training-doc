@@ -31,23 +31,27 @@ spec:
 
 Resulting container will be allowed to use 100 millicores and 123 mebibyte (`~128` Megabytes)
 
-##### CPU
+#### CPU
 
 One CPU core is equivalent to `1000m` (one thousand millicpu or one thousand millicores)
 CPU is always expressed as an absolute quantity, never as a relative quantity; 0.1 is the same amount of `CPU` on a single-core, dual-core, or 48-core machine
 
-##### Memory
+#### Memory
 You can express memory as a plain integer or as a fixed-point integer using one of these suffixes: `E, P, T, G, M, K`. You can also use the power-of-two equivalents: `Ei, Pi, Ti, Gi, Mi, Ki`. For example, the following represent roughly the same value:
-```
+
+```cosole
 128974848, 129e6, 129M, 123Mi
 ```
-###### Mebibyte vs Megabyte
-```
+
+#### Mebibyte vs Megabyte
+
+```console
 1 Megabyte (MB) = (1000)^2 bytes = 1000000 bytes.
 1 Mebibyte (MiB) = (1024)^2 bytes = 1048576 bytes.
-````
+```
 
 #### Requests
+
 We can request a specific amount of CPU and Memory when the container starts up.
 
 Suppose if the Java application need at least `128MB` of memory during startup , we can use resource request in Pod spec.

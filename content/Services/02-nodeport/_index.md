@@ -6,7 +6,13 @@ chapter = false
 pre = "<b>- </b>"
 +++
 
-# How `Service` object with type `nodePort` works ?
+# NodePort
+
+NodePort Exposes the service on each Node’s IP at a static port (the NodePort). A ClusterIP service, to which the NodePort service will route, is automatically created. You’ll be able to contact the NodePort service, from outside the cluster, by requesting <NodeIP>:<NodePort>.
+
+#### How `nodePort` works
+
+![NodePort](pod-service-nodeport.png?classes=shadow)
 
 kube-proxy watches the Kubernetes master for the addition and removal of Service and Endpoints objects.
 
@@ -16,10 +22,8 @@ For each `Service`,  it opens a port (randomly chosen) on the local node. Any co
 
 #### `nodePort` workflow.
 
-`nodePort` -> `30391`
+1. `nodePort` -> `30391`
 
-`port` -> `80`
+2. `port` -> `80`
 
-`targetPort` -> `9090`
-
-![NodePort](pod-service-nodeport.png)
+3. `targetPort` -> `9090`
