@@ -1,6 +1,6 @@
 +++
 title = "Installation"
-menuTitle = "Installation"
+menuTitle = "2. Installation"
 date = 2018-12-29T17:15:52Z
 weight = 2
 chapter = true

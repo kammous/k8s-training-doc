@@ -1,6 +1,6 @@
 +++
 title = "YAML Crash course"
-menuTitle = "YAML Crash course"
+menuTitle = "5. YAML Crash course"
 date = 2018-12-29T17:15:52Z
 weight = 5
 chapter = true
