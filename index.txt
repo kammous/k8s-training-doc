@@ -44,7 +44,10 @@
  - NodePort
  - ClusterIP
 =============================
+
+
 6. Multi-Container Pod
+ - Inject data to pod
  - Pod with two containers
    - Coffee Pod
    - Tea Pod
@@ -58,6 +61,7 @@
  - Create a Pod
    - Init Container sync contents to a volume
    - Nginx container to host the content from volume
+
 9. Explore API
  - Access via cURL
  - Structure of API

@@ -7,8 +7,10 @@ pre = "<b>- </b>"
 +++
 
 # Pods behind a service.
+![NodePod](nodeport.png?classes=shadow)
+Lets `describe` the service to see how the mapping of Pods works in a service object.
 
-Lets describe the service to see how the mapping of Pods works
+(Yes , we are slowly moving from general wordings to pure kubernetes terms)
 ```yaml
 $ kubectl describe service coffee
 Name:                     coffee
@@ -29,26 +31,27 @@ External Traffic Policy:  Cluster
 Here the label `run=coffee` is the one which creates the mapping from service to Pod.
 
 Any pod with label `run=coffee` will be mapped under this service.
-We call it as Endpoints.
 
+Those mappings are called `Endpoints`.
+
+Lets see the `endpoints` of `service` `coffee`
 ```shell
 $ kubectl get endpoints  coffee
 NAME     ENDPOINTS         AGE
 coffee   10.10.1.13:9090   3h48m
-k8s@k8s-master-01:~/alpine$
 ```
 
 As of now only one pod endpoint is mapped under this service.
 
-lets create one more Pod with same lable and see how it affects endpoints.
+lets create one more Pod with same label and see how it affects endpoints.
 
 ```
-kubectl run coffee01 --image=ansilh/demo-coffee --restart=Never --labels=run=coffee
+$ kubectl run coffee01 --image=ansilh/demo-coffee --restart=Never --labels=run=coffee
 ```
 
 Now we have one more Pod
 ```
-k8s@k8s-master-01:~/alpine$ kubectl get pods
+$ kubectl get pods
 NAME       READY   STATUS    RESTARTS   AGE
 coffee     1/1     Running   0          15h
 coffee01   1/1     Running   0          6s
