@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/labels_and_annotations/01-labels/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/labels_and_annotations/02-annotations/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/multi_container_pod/01-env-inject/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/multi_container_pod/02-volumes/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/multi_container_pod/03-init-container/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pods/01-what-is-pod/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/services/01-expose-pod/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/introduction/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pods/02-create-pod/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/services/02-nodeport/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/installation/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pods/03-create-pod/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/services/03-clusterip/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pods/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pods/04-nodes/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/services/04-loadbalancer/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/labels_and_annotations/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/introduction/01-linux-kernel/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pods/05-namespaces/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/services/05-endpoints/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/installation/01-vbox-install/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/yaml_primer/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/introduction/02-namespaces/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pods/06-self-healing-readiness/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/installation/02-nw-setup/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/services/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/introduction/03-cgroups/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pods/07-self-healing-liveness/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/yaml_primer/01-structure/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/yaml_primer/02-explore/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/installation/03-ubuntu-install/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/multi_container_pod/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/introduction/04-containers/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pods/08-request-limits/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/installation/04-docker-install/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/introduction/07-network-plugins/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/installation/05-golang-setup/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/introduction/05-docker/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/installation/06-demo-webapp/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/introduction/06-kubernetes/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/installation/07-build-docker-image/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/installation/08-run-docker/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/installation/09-install-kubeadm/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/installation/10-master/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/installation/11-network-plugin/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/installation/12-worker/</loc>
+    <lastmod>2018-12-29T17:15:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/multi_container_pod/04-sidecar/</loc>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
