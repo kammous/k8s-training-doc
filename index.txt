@@ -37,14 +37,10 @@
    - Labeling of Nodes
    - Schedule Pod based on labels on node.
 
-
-
 5. Services
  - Expose Pod
  - NodePort
  - ClusterIP
-=============================
-
 
 6. Multi-Container Pod
  - Inject data to pod
@@ -61,7 +57,7 @@
  - Create a Pod
    - Init Container sync contents to a volume
    - Nginx container to host the content from volume
-
+=============================
 9. Explore API
  - Access via cURL
  - Structure of API
@@ -69,6 +65,11 @@
    - Versioning of API groups
  - Explore API calls using 'strace'
  - Proxying
+
+13. ReplicaSet
+  - Create a replicaset with 3 Nginx replicas
+  - Delete one Pod and observe how rs behaves
+  - Delete replicaset without deleting Pods
 
 10. Deployments
  - Create an Nginx deployemnt with version 1
@@ -83,10 +84,6 @@
 12. Quota
  - Apply limit to namespace
 
-13. ReplicaSet
- - Create a replicaset with 3 Nginx replicas
- - Delete one Pod and observe how rs behaves
- - Delete replicaset without deleting Pods
 
 14. DaemonSet
  - Why we need DaemonSet

@@ -1,6 +1,12 @@
++++
+menutitle = "Pod design patterns"
+date = 2018-12-29T17:15:52Z
+weight = 1
+chapter = false
+pre = "<b>- </b>"
++++
 
-
-
+# Pod design patterns
 
 When the containers have the exact same lifecycle, or when the containers must run on the same node. The most common scenario is that you have a helper process that needs to be located and managed on the same node as the primary container.
 
