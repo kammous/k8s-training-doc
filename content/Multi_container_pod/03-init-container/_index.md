@@ -26,20 +26,38 @@ So lets write a Pod specification for Nginx container and add InitContainer to d
 apiVersion: v1
 kind: Pod
 metadata:
- name: web-app-with-initcontainer
- labels:
-  run: web-app-with-initcontainer
+  labels:
+    run: demo-web
+  name: demo-web
 spec:
- volumes:
- - name: "website"
-   emptyDir:{}
- containers:
- - name: nginx
-   image: nginx
-   volumeMounts:
-   - name: "website"
-     mountPath: "/usr/share/nginx/html"
+  volumes:
+  - name: html
+    emptyDir: {}
+  containers:
+  - image: nginx
+    name: demo-web
+    volumeMounts:
+    - name: html
+      mountPath: /usr/share/nginx/html
   initContainers:
-  - name: "git-sync"
-   
+  - image: ansilh/debug-tools
+    name: git-pull
+    args:
+    - git
+    - clone
+    - https://github.com/ansilh/k8s-demo-web.git
+    - /html/.
+    volumeMounts:
+    - name: html
+      mountPath: /html/
 ```
+
+Problem with this design is , no way to pull the changes once Pod is up.
+InitContainer run only once during the startup of the Pod.
+
+Incase of InitContainer failure , Pod startup will fail and never start other containers.
+
+We can specify more than one initcontainer if needed.
+Startup of initcontainer will be sequential and the order will be selected based on the order in yaml spec.
+
+In next session , we will discuss about other design patterns for Pod.

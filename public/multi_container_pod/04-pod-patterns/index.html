@@ -9,22 +9,22 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>Introduction :: Kubernetes Training</title>
+    <title> :: Kubernetes Training</title>
 
     
-    <link href="/css/nucleus.css?1547239776" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1547239776" rel="stylesheet">
-    <link href="/css/hybrid.css?1547239776" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1547239776" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1547239776" rel="stylesheet">
-    <link href="/css/auto-complete.css?1547239776" rel="stylesheet">
-    <link href="/css/theme.css?1547239776" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1547239776" rel="stylesheet">
+    <link href="/css/nucleus.css?1547239777" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1547239777" rel="stylesheet">
+    <link href="/css/hybrid.css?1547239777" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1547239777" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1547239777" rel="stylesheet">
+    <link href="/css/auto-complete.css?1547239777" rel="stylesheet">
+    <link href="/css/theme.css?1547239777" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1547239777" rel="stylesheet">
     
-      <link href="/css/theme-mine.css?1547239776" rel="stylesheet">
+      <link href="/css/theme-mine.css?1547239777" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1547239776"></script>
+    <script src="/js/jquery-2.x.min.js?1547239777"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/introduction/">
+  <body class="" data-url="/multi_container_pod/04-pod-patterns/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -148,14 +148,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1547239776"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1547239776"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1547239777"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1547239777"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1547239776"></script>
+<script type="text/javascript" src="/js/search.js?1547239777"></script>
 
     
   </div>
@@ -172,8 +172,8 @@
   
     
     <li data-nav-id="/introduction/" title="Introduction" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/introduction/">
@@ -1324,7 +1324,7 @@
   
     
     <li data-nav-id="/multi_container_pod/" title="Multi-Container Pods" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1431,8 +1431,8 @@
   
     
     <li data-nav-id="/multi_container_pod/04-pod-patterns/" title="" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/multi_container_pod/04-pod-patterns/">
@@ -1497,7 +1497,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/ansilh/k8s-training-doc/tree/master/content/Introduction/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/ansilh/k8s-training-doc/tree/master/content/Multi_container_pod/04-pod-patterns/_index.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -1512,6 +1512,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1522,7 +1524,13 @@
             
           
           
-            <a href='/'></a> > Introduction
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/multi_container_pod/'>Multi-Container Pods</a> > 
+          
+         
           
          
           
@@ -1531,14 +1539,33 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#example-1-sidecar-containers">Example #1: Sidecar containers</a></li>
+<li><a href="#example-2-ambassador-containers">Example #2: Ambassador containers</a></li>
+<li><a href="#example-3-adapter-containers">Example #3: Adapter containers</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
 
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1></h1>
           
 
         
@@ -1546,19 +1573,85 @@
 
 
 
-<h3 id="chapter-1">Chapter 1</h3>
+<p>When the containers have the exact same lifecycle, or when the containers must run on the same node. The most common scenario is that you have a helper process that needs to be located and managed on the same node as the primary container.</p>
 
-<h1 id="introduction">Introduction</h1>
+<p>Another reason to combine containers into a single pod is for simpler communication between containers in the pod. These containers can communicate through shared volumes (writing to a shared file or directory) and through inter-process communication (semaphores or shared memory).</p>
 
-<p>In this chapter we will discuss about the basic building blocks of containers with few demos and architecture of kubernetes</p>
+<p>There are three common design patterns and use-cases for combining multiple containers into a single pod. We’ll walk through the <code>sidecar</code> pattern, the <code>adapter</code> pattern, and the <code>ambassador</code> pattern.</p>
+
+<p><img src="multi-container-pod-design.png?classes=shadow" alt="Pod Design" /></p>
+
+<h3 id="example-1-sidecar-containers">Example #1: Sidecar containers</h3>
+
+<p>Sidecar containers extend and enhance the “main” container, they take existing containers and make them better.  As an example, consider a container that runs the Nginx web server.  Add a different container that syncs the file system with a git repository, share the file system between the containers and you have built Git push-to-deploy.</p>
+
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: demo-web
+  name: demo-web
+spec:
+  volumes:
+  - name: html
+    emptyDir: {}
+  containers:
+  - image: nginx
+    name: demo-web
+    volumeMounts:
+    - name: html
+      mountPath: /usr/share/nginx/html
+  - image: ansilh/debug-tools
+    name: git-pull
+    args:
+    - sh
+    - -c
+    - '[ ! -d /html/.git ] &amp;&amp; git  clone https://github.com/ansilh/k8s-demo-web.git /html/ || { cd /html; git pull; } '
+    volumeMounts:
+    - name: html
+      mountPath: /html/
+</code></pre>
+
+<p>Lets do a tail on the <code>logs</code> and see how the <code>git-pull</code> works</p>
+
+<pre><code class="language-shell">$ kubectl logs demo-web git-pull -f
+Cloning into '/html'...
+Fri Jan 11 20:39:25 UTC 2019
+Already up to date.
+Fri Jan 11 20:39:31 UTC 2019
+</code></pre>
+
+<p>Lets modify the WebPage and push the changes to Github</p>
+
+<pre><code class="language-console">Already up to date.
+Fri Jan 11 20:44:04 UTC 2019
+From https://github.com/ansilh/k8s-demo-web
+   e2df24f..1791ee1  master     -&gt; origin/master
+Updating e2df24f..1791ee1
+Fast-forward
+ images/pic-k8s.jpg | Bin 0 -&gt; 14645 bytes
+ index.html         |   4 ++--
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+ create mode 100644 images/pic-k8s.jpg
+Fri Jan 11 20:44:10 UTC 2019
+Already up to date.
+</code></pre>
+
+<h3 id="example-2-ambassador-containers">Example #2: Ambassador containers</h3>
+
+<p>Ambassador containers proxy a local connection to the world.  As an example, consider a Redis cluster with read-replicas and a single write master.  You can create a Pod that groups your main application with a Redis ambassador container.  The ambassador is a proxy is responsible for splitting reads and writes and sending them on to the appropriate servers.  Because these two containers share a network namespace, they share an IP address and your application can open a connection on “localhost” and find the proxy without any service discovery.  As far as your main application is concerned, it is simply connecting to a Redis server on localhost.  This is powerful, not just because of separation of concerns and the fact that different teams can easily own the components, but also because in the development environment, you can simply skip the proxy and connect directly to a Redis server that is running on localhost.</p>
+
+<h3 id="example-3-adapter-containers">Example #3: Adapter containers</h3>
+
+<p>Adapter containers standardize and normalize output.  Consider the task of monitoring N different applications.  Each application may be built with a different way of exporting monitoring data. (e.g. JMX, StatsD, application specific statistics) but every monitoring system expects a consistent and uniform data model for the monitoring data it collects.  By using the adapter pattern of composite containers, you can transform the heterogeneous monitoring data from different systems into a single unified representation by creating Pods that groups the application containers with adapters that know how to do the transformation.  Again because these Pods share namespaces and file systems, the coordination of these two containers is simple and straightforward.
+<a href="https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/">https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/</a>
+<a href="https://matthewpalmer.net/kubernetes-app-developer/articles/multi-container-pod-design-patterns.html">https://matthewpalmer.net/kubernetes-app-developer/articles/multi-container-pod-design-patterns.html</a></p>
 
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -1590,6 +1683,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -1600,219 +1695,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -2072,6 +1954,216 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -2278,6 +2370,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -2292,6 +2385,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2340,6 +2436,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -2364,10 +2461,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/" title=""> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/multi_container_pod/03-init-container/" title=""> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/introduction/01-linux-kernel/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/multi_container_pod/01-env-inject/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2377,20 +2474,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1547239776"></script>
-    <script src="/js/perfect-scrollbar.min.js?1547239776"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1547239776"></script>
-    <script src="/js/jquery.sticky.js?1547239776"></script>
-    <script src="/js/featherlight.min.js?1547239776"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1547239776"></script>
-    <script src="/js/highlight.pack.js?1547239776"></script>
+    <script src="/js/clipboard.min.js?1547239777"></script>
+    <script src="/js/perfect-scrollbar.min.js?1547239777"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1547239777"></script>
+    <script src="/js/jquery.sticky.js?1547239777"></script>
+    <script src="/js/featherlight.min.js?1547239777"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1547239777"></script>
+    <script src="/js/highlight.pack.js?1547239777"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1547239776"></script>
-    <script src="/js/learn.js?1547239776"></script>
-    <script src="/js/hugo-learn.js?1547239776"></script>
+    <script src="/js/modernizr.custom.71422.js?1547239777"></script>
+    <script src="/js/learn.js?1547239777"></script>
+    <script src="/js/hugo-learn.js?1547239777"></script>
 
-    <link href="/mermaid/mermaid.css?1547239776" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1547239776"></script>
+    <link href="/mermaid/mermaid.css?1547239777" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1547239777"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

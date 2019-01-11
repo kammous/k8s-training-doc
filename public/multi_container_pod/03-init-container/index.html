@@ -12,19 +12,19 @@
     <title> :: Kubernetes Training</title>
 
     
-    <link href="/css/nucleus.css?1547211870" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1547211870" rel="stylesheet">
-    <link href="/css/hybrid.css?1547211870" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1547211870" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1547211870" rel="stylesheet">
-    <link href="/css/auto-complete.css?1547211870" rel="stylesheet">
-    <link href="/css/theme.css?1547211870" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1547211870" rel="stylesheet">
+    <link href="/css/nucleus.css?1547239776" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1547239776" rel="stylesheet">
+    <link href="/css/hybrid.css?1547239776" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1547239776" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1547239776" rel="stylesheet">
+    <link href="/css/auto-complete.css?1547239776" rel="stylesheet">
+    <link href="/css/theme.css?1547239776" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1547239776" rel="stylesheet">
     
-      <link href="/css/theme-mine.css?1547211870" rel="stylesheet">
+      <link href="/css/theme-mine.css?1547239776" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1547211870"></script>
+    <script src="/js/jquery-2.x.min.js?1547239776"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -148,14 +148,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1547211870"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1547211870"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1547239776"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1547239776"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1547211870"></script>
+<script type="text/javascript" src="/js/search.js?1547239776"></script>
 
     
   </div>
@@ -1430,12 +1430,12 @@
  
   
     
-    <li data-nav-id="/multi_container_pod/04-sidecar/" title="" class="dd-item 
+    <li data-nav-id="/multi_container_pod/04-pod-patterns/" title="" class="dd-item 
         
         
         
         ">
-      <a href="/multi_container_pod/04-sidecar/">
+      <a href="/multi_container_pod/04-pod-patterns/">
           
           
             <i class="fas read-icon"></i>
@@ -1543,7 +1543,13 @@
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
-<li><a href="#initcontainer">InitContainer</a></li>
+<li><a href="#initcontainer">InitContainer</a>
+<ul>
+<li>
+<ul>
+<li><a href="#non-persistent-web-server">Non-persistent web server</a></li>
+</ul></li>
+</ul></li>
 </ul>
 </nav>
     </div>
@@ -1568,7 +1574,58 @@
 <h1 id="initcontainer">InitContainer</h1>
 
 <p><img src="initcontainer.png?classes=shadow&amp;width=30pc" alt="InitContainer" />
-In this session , we will</p>
+In this session , we will discuss about InitContainer</p>
+
+<h3 id="non-persistent-web-server">Non-persistent web server</h3>
+
+<p>As we already know ,containers are ephemeral and the modifications will be lost when container is destroyed.</p>
+
+<p>In this example , we will download webpages from Github repository and store it in a <code>emptyDir</code> volume.</p>
+
+<p>From this emptyDir volume , we will serve the HTML pages using an Nginx Pod</p>
+
+<p><code>emptyDir</code> is a volume type , just like hostPath , but the contents of <code>emptyDir</code> will be destroyed when Pod is stopped.</p>
+
+<p>So lets write a Pod specification for Nginx container and add InitContainer to download HTML page</p>
+
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: demo-web
+  name: demo-web
+spec:
+  volumes:
+  - name: html
+    emptyDir: {}
+  containers:
+  - image: nginx
+    name: demo-web
+    volumeMounts:
+    - name: html
+      mountPath: /usr/share/nginx/html
+  initContainers:
+  - image: ansilh/debug-tools
+    name: git-pull
+    args:
+    - git
+    - clone
+    - https://github.com/ansilh/k8s-demo-web.git
+    - /html/.
+    volumeMounts:
+    - name: html
+      mountPath: /html/
+</code></pre>
+
+<p>Problem with this design is , no way to pull the changes once Pod is up.
+InitContainer run only once during the startup of the Pod.</p>
+
+<p>Incase of InitContainer failure , Pod startup will fail and never start other containers.</p>
+
+<p>We can specify more than one initcontainer if needed.
+Startup of initcontainer will be sequential and the order will be selected based on the order in yaml spec.</p>
+
+<p>In next session , we will discuss about other design patterns for Pod.</p>
 
 
 <footer class=" footline" >
@@ -2390,7 +2447,7 @@ In this session , we will</p>
 			<a class="nav nav-prev" href="/multi_container_pod/02-volumes/" title=""> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/multi_container_pod/04-sidecar/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/multi_container_pod/04-pod-patterns/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2400,20 +2457,20 @@ In this session , we will</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1547211870"></script>
-    <script src="/js/perfect-scrollbar.min.js?1547211870"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1547211870"></script>
-    <script src="/js/jquery.sticky.js?1547211870"></script>
-    <script src="/js/featherlight.min.js?1547211870"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1547211870"></script>
-    <script src="/js/highlight.pack.js?1547211870"></script>
+    <script src="/js/clipboard.min.js?1547239776"></script>
+    <script src="/js/perfect-scrollbar.min.js?1547239776"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1547239776"></script>
+    <script src="/js/jquery.sticky.js?1547239776"></script>
+    <script src="/js/featherlight.min.js?1547239776"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1547239776"></script>
+    <script src="/js/highlight.pack.js?1547239776"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1547211870"></script>
-    <script src="/js/learn.js?1547211870"></script>
-    <script src="/js/hugo-learn.js?1547211870"></script>
+    <script src="/js/modernizr.custom.71422.js?1547239776"></script>
+    <script src="/js/learn.js?1547239776"></script>
+    <script src="/js/hugo-learn.js?1547239776"></script>
 
-    <link href="/mermaid/mermaid.css?1547211870" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1547211870"></script>
+    <link href="/mermaid/mermaid.css?1547239776" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1547239776"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
