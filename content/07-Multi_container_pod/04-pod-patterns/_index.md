@@ -14,11 +14,10 @@ Another reason to combine containers into a single pod is for simpler communicat
 
 There are three common design patterns and use-cases for combining multiple containers into a single pod. We’ll walk through the `sidecar` pattern, the `adapter` pattern, and the `ambassador` pattern.
 
-![Pod Design](multi-container-pod-design.png?classes=shadow)
-
-
 ### Example #1: Sidecar containers
 Sidecar containers extend and enhance the “main” container, they take existing containers and make them better.  As an example, consider a container that runs the Nginx web server.  Add a different container that syncs the file system with a git repository, share the file system between the containers and you have built Git push-to-deploy.
+
+![Pod Design](sidecar.png?classes=shadow)
 
 ```yaml
 apiVersion: v1
@@ -76,5 +75,9 @@ Already up to date.
 ### Example #2: Ambassador containers
 Ambassador containers proxy a local connection to the world.  As an example, consider a Redis cluster with read-replicas and a single write master.  You can create a Pod that groups your main application with a Redis ambassador container.  The ambassador is a proxy is responsible for splitting reads and writes and sending them on to the appropriate servers.  Because these two containers share a network namespace, they share an IP address and your application can open a connection on “localhost” and find the proxy without any service discovery.  As far as your main application is concerned, it is simply connecting to a Redis server on localhost.  This is powerful, not just because of separation of concerns and the fact that different teams can easily own the components, but also because in the development environment, you can simply skip the proxy and connect directly to a Redis server that is running on localhost.
 
+![Pod Design](ambassador.png?classes=shadow)
+
 ### Example #3: Adapter containers
 Adapter containers standardize and normalize output.  Consider the task of monitoring N different applications.  Each application may be built with a different way of exporting monitoring data. (e.g. JMX, StatsD, application specific statistics) but every monitoring system expects a consistent and uniform data model for the monitoring data it collects.  By using the adapter pattern of composite containers, you can transform the heterogeneous monitoring data from different systems into a single unified representation by creating Pods that groups the application containers with adapters that know how to do the transformation.  Again because these Pods share namespaces and file systems, the coordination of these two containers is simple and straightforward.
+
+![Pod Design](adapter.png?classes=shadow)
