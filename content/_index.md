@@ -1,13 +1,9 @@
 
 
-![Trainer](../images/profile.png?classes=shadow)
+[//]: #![Trainer](../images/profile.png?classes=shadow)
 
-#### About me.!
- - Opensource Evangelist with a decade of experience
- - Certified Kubernetes Administrator.
- - Linux Foundation Certified Engineer.
- - AWS Certified Solution Architect Associate.
- - Red Hat Certified Engineer.
+![k8s](k8s.jpeg?classes=shadow&width=50pc)
+
 #### History of K8S
 * 2003-2004: Google introduced Borg system , which started as a small project to manage new search engine.
 Later on it was heavily used for managing internal distributed systems and jobs
