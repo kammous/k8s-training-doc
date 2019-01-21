@@ -14,16 +14,21 @@ But in a production environment , we use private image registries so that we wil
 
 In this session , we will deploy a private registry using `Portus`
 
+Students needs to deploy this in a separate VM (4GB memmory + 2vCPUs). If you are attending live session , then instructor will provide private registry credential to students.
+
 ### Download `docker-compose` binary
+```console
 $ sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 $ sudo chmod +x /usr/local/bin/docker-compose
 $ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-
+```
 ### Clone Portus git repository
+```
 $ git clone https://github.com/SUSE/Portus.git
-
+```
 ### Start the environment with `docker-compose`
+```
 $ cd Portus
 $ docker-compose up
-
+```
 It will take some time to download and deploy all needed containers.
