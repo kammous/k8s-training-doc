@@ -21,6 +21,17 @@ Contains all stable and core API objects
 #### `/api` (APIVersions)
 This endpoint will return core API version & API address itself
 
+Execute below commands if you are using Vagrant based setup
+If you are using `kubeadm` based setup , then skip this.
+
+```shell
+$ sudo mkdir -p /etc/kubernetes/pki/
+$ sudo cp /home/vagrant/PKI/ca.pem /etc/kubernetes/pki/ca.crt
+$ sudo cp /home/vagrant/PKI/k8s-master-01.pem /etc/kubernetes/pki/apiserver-kubelet-client.crt
+$ sudo cp /home/vagrant/PKI/k8s-master-01-key.pem /etc/kubernetes/pki/apiserver-kubelet-client.key
+```
+
+
 ```console
 $ sudo curl -s  --cacert /etc/kubernetes/pki/ca.crt --cert /etc/kubernetes/pki/apiserver-kubelet-client.crt --key /etc/kubernetes/pki/apiserver-kubelet-client.key -XGET 'https://192.168.56.201:6443/api?timeout=32s' |python3 -m json.tool
 ```
