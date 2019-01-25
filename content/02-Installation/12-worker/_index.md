@@ -8,27 +8,32 @@ pre = "<b>- </b>"
 
 # Add worker node to cluster
 
-#### Get discovery secret from Master node.
+- Get discovery secret from Master node.
+
 ```shell
 $ echo sha256:$(openssl x509 -in /etc/kubernetes/pki/ca.crt -noout -pubkey | openssl rsa -pubin -outform DER 2>/dev/null | sha256sum | cut -d' ' -f1)
 ```
 
-#### Get node join token from Master node.
+- Get node join token from Master node.
+
 ```shell
 $ kubeadm token list |grep bootstra |awk '{print $1}'
 ```
 
-#### Execute kubeadm command to add the Worker to cluster
+- Execute kubeadm command to add the Worker to cluster
+
 ```shell
 $ sudo kubeadm join 192.168.56.201:6443 --token <token> --discovery-token-ca-cert-hash <discovery hash>
 ```
 
-#### Verify system Pod status
+- Verify system Pod status
+
 ```shell
 $ kubectl get pods -n kube-system |nl
 ```
 
-#### Output
+- Output
+
 ```yaml
  1  NAME                                    READY   STATUS    RESTARTS   AGE
  2  calico-node-2pwv9                       2/2     Running   0          20m

@@ -13,6 +13,7 @@ After completing this session , you will be able to create Pod declaratively and
 So lets get started.
 
 #### Lets Check the running Pods
+
 ```shell
 k8s@k8s-master-01:~$ kubectl get pods
 No resources found.
@@ -21,8 +22,9 @@ k8s@k8s-master-01:~$
 Nothing <i class="fa fa-frown"></i>
 
 #### Lets create one using a `YAML` file
+
 ```shell
-vi pod.yaml
+$ vi pod.yaml
 ```
 
 ```yaml
@@ -37,38 +39,46 @@ spec:
 ```
 
 #### Apply YAML using `kubectl` command
+
 ```shell
-k8s@k8s-master-01:~$ kubectl apply -f pod.yaml
-pod/coffee-app created
-k8s@k8s-master-01:~$
+$ kubectl apply -f pod.yaml
 ```
 
 #### View status of Pod
+
 Pod status is `ContainerCreating`
 ```shell
-k8s@k8s-master-01:~$ kubectl get pods
+$ kubectl get pods
+```
+Output
+```console
 NAME         READY   STATUS              RESTARTS   AGE
 coffee-app   0/1     ContainerCreating   0          4s
-k8s@k8s-master-01:~$
 ```
 
 #### Execute `kubectl get pods` after some time
 Now `Pod` status will change to `Running`
+
 ```shell
-k8s@k8s-master-01:~$ kubectl get pods
+$ kubectl get pods
+```
+Output
+```console
 NAME         READY   STATUS    RESTARTS   AGE
 coffee-app   1/1     Running   0          27s
-k8s@k8s-master-01:~$
 ```
 
 Now we can see our first Pod <i class="fa fa-smile-beam"></i>
 
 #### Get the IP address of `Pod`
 ```shell
-k8s@k8s-master-01:~$ kubectl get pods -o wide
+$ kubectl get pods -o wide
+```
+Output
+
+```console
 NAME         READY   STATUS    RESTARTS   AGE    IP            NODE            NOMINATED NODE   READINESS GATES
 coffee-app   1/1     Running   0          2m8s   192.168.1.7   k8s-worker-01   <none>           <none>
-k8s@k8s-master-01:~$
 ```
 
 #### Create a new CentOS container
@@ -87,46 +97,57 @@ spec:
 ```
 
 #### Apply the Yaml spec
-```
-kubectl apply -f centos-pod.yaml
-pod/centos-pod created
+```shell
+$ kubectl apply -f centos-pod.yaml
 ```
 
 #### Verify the status of Pod
-```
+```shell
 $ kubectl get pods
+```
+
+```console
 NAME         READY   STATUS              RESTARTS   AGE
 centos-pod   0/1     ContainerCreating   0          12s
 coffee-app   1/1     Running             0          5m31s
 ```
 
 #### After some time status will change to Running
-```
+```shell
 $ kubectl get pods
+```
+
+```shell
 NAME         READY   STATUS    RESTARTS   AGE
 centos-pod   1/1     Running   0          59s
 coffee-app   1/1     Running   0          6m18s
 ```
 
 #### Login to CentOS Pod
-````
+```shell
 $ kubectl exec -it centos-pod -- /bin/bash
-[root@centos-pod /]#
-````
+```
 
 #### Verify Coffee app using curl
 ```shell
-[root@centos-pod /]# curl -s 192.168.1.13:9090  |grep 'Serving Coffee'90
+$ curl -s 192.168.1.13:9090  |grep 'Serving'
+```
+```console
 <html><head></head><title></title><body><div> <h2>Serving Coffee from</h2><h3>Pod:coffee-app</h3><h3>IP:192.168.1.13</h3><h3>Node:172.16.0.1</h3><img src="data:image/png;base64,
 [root@centos-pod /]#
 ```
 
 #### Delete pod
 ```shell
-k8s@k8s-master-01:~$ kubectl delete pod coffee-app centos-pod
+$ kubectl delete pod coffee-app centos-pod
+```
+
+```console
 pod "coffee-app" deleted
 pod "centos-pod" deleted
-k8s@k8s-master-01:~$ kubectl get pods
-No resources found.
-k8s@k8s-master-01:~$
+```
+
+#### Make sure not pod is running 
+```shell
+$ kubectl get pods
 ```

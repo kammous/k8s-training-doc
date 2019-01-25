@@ -8,24 +8,27 @@ pre = "<b>- </b>"
 
 # Deploy Network Plugin - Calico
 
-#### Apply RBAC rules (More about RBAC will discuss later)
+- Apply RBAC rules (More about RBAC will discuss later)
+
 ```shell
 $ kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/rbac-kdd.yaml
 ```
 
-#### Download Calico deployment YAML
-```
-wget https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml
+- Download Calico deployment YAML
+
+```shell
+$ wget https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml
 ```
 
-#### Edit CALICO_IPV4POOL_CIDR value to 192.168.10.0/24 (To avoid node IP range conflict)
-Change
+- Edit `CALICO_IPV4POOL_CIDR` value to `10.10.0.0/16`
+
 ```yaml
 - name: CALICO_IPV4POOL_CIDR
-  value: "192.168.10.0/24"
+  value: "10.10.0.0/16"
 ```
 
-#### Add `name: IP_AUTODETECTION_METHOD` & `value: "can-reach=192.168.56.1"` (This IP should be the host only network ip on your laptop)
+- Add `name: IP_AUTODETECTION_METHOD` & `value: "can-reach=192.168.56.1"` (This IP should be the host only network ip on your laptop)
+
 ```yaml
 ...
 image: quay.io/calico/node:v3.3.2
@@ -35,12 +38,14 @@ env:
 ...
 ```
 
-#### Apply Deployment
+- Apply Deployment
+
 ```shell
 $ kubectl apply -f calico.yaml
 ```
 
-#### Make sure the `READY` status should show same value on left and right side of `/` and  `Pod` `STATUS` should be `Running`
+- Make sure the `READY` status should show same value on left and right side of `/` and  `Pod` `STATUS` should be `Running`
+
 ```shel
 $ kubectl get pods -n kube-system |nl
 ```
@@ -57,4 +62,6 @@ $ kubectl get pods -n kube-system |nl
 9  kube-scheduler-k8s-master-01            1/1     Running   0          20m
 ```
 
-#### Contact the Trainer if the output is not the expected one after few minutes (~3-4mins).
+{{% notice tip %}}
+Contact the Trainer if the output is not the expected one after few minutes (~3-4mins).
+{{% /notice %}}
