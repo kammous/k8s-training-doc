@@ -14,13 +14,24 @@ If you want to customize the configuration of an application inside a Pod , you 
 
 When Pod lifecycle ends , the changes we made will be lost and we have to redo the same changes when the Pod comes-up.
 
-This is not convenient and we need a better mechanism to manage these configuration related operations.
+This is not convenient and we need a better way to manage these configuration related operations.
 
-To achieve a persistent configuration , regardless of the Pod state , k8s introduced ConfigMaps.
+To achieve a persistent configuration regardless of the Pod state , k8s introduced ConfigMaps.
 
-We can store environmental variables or a file content or both using ConfigMaps.
+We can store environmental variables or a file content or both using ConfigMaps in k8s.
 
-### Create ConfigMap from literals
+Use the `kubectl create configmap` command to create configmaps from directories, files, or literal values:
+
+where <map-name> is the name you want to assign to the ConfigMap and <data-source> is the directory, file, or literal value to draw the data from.
+
+The data source corresponds to a key-value pair in the ConfigMap, where
+
+key = the file name or the key you provided on the command line, and
+value = the file contents or the literal value you provided on the command line.
+You can use kubectl describe or kubectl get to retrieve information about a ConfigMap
+
+
+#### Create ConfigMap from literals - Declarative
 
 ```yaml
 apiVersion: v1
@@ -31,7 +42,13 @@ data:
   VAR1: val1
 ```
 
-### Create ConfigMap from file
+#### Create ConfigMap from literals - Imperative
+
+```shell
+$ kubectl create configmap myconfig --from-literal=VAR1=val1
+```
+
+#### Create ConfigMap from file - Declarative
 
 ```yaml
 apiVersion: v1
@@ -40,8 +57,21 @@ metadata:
   name: myconfig
 data:
   configFile: |
-  {
-    VAR2=val2
-    VAR3: val3
-  }
+    This content is coming from a file
+    Also this file have multiple lines
+```
+#### Create ConfigMap from file - Imperative
+
+```shell
+$ cat <<EOF >configFile
+This content is coming from a file
+EOF
+```
+
+```shell
+$ cat configFile
+```
+
+```shell
+$ kubectl create configmap myconfig --from-file=configFile
 ```

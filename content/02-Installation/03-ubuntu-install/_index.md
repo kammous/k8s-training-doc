@@ -33,6 +33,7 @@ Host-Only should be the first one
 
 - Install Ubuntu on this VM and go ahead with all default options
  - When asked, provide user name `k8s` and set password
+ - Make sure to select the NAT interface as primary during installation.
  - Select below in `Software Selection` screen
   - Manual Software Selection
   - OpenSSH Server
@@ -50,12 +51,16 @@ $ sudo apt-get upgrade
 ```shell
 $ sudo poweroff
 ```
+#### Clone VM
+
+You may use VirtualBox GUI to create a full clone - Preferred
+You can use below commands to clone a VM - Execute it at your own risk ;)
 
 - Open CMD and execute below commands to create all needed VMs.
   You can replace the value of `DRIVER_NAME` with a drive which is having enough free space (~50GB)
 - Windows
 
-```PowerShell
+```shell
  set DRIVE_NAME=D
  cd C:\Program Files\Oracle\VirtualBox
  VBoxManage.exe clonevm "k8s-master-01" --name "k8s-worker-01" --groups "/K8S Training" --basefolder "%DRIVE_NAME%:\VMs" --register
@@ -70,13 +75,7 @@ $ sudo poweroff
 
 ##### Start VMs one by one and perform below
 
-- IP Address and Hostname for each VMs
-
-```console
-192.168.56.201 k8s-master-01
-192.168.56.202 k8s-worker-01
-```
-
+##### Execute below steps on both master and worker nodes
 - Assign IP address and make sure it comes up at boot time.
 
 ```shell
@@ -85,19 +84,22 @@ $ sudo vi /etc/network/interfaces
 ```
 
 ```properties
-auto enp0s3
+auto enp0s3 #<-- Make sure to use HostOnly interface (it can also be enp0s8)
 iface enp0s3 inet static
-    address 192.168.56.X #<--- Replace X with corresponding IP octect
+    address 192.168.56.X #<--- Replace X with corresponding IP octet
     netmask 255.255.255.0
 ```
 
 ```shell
 $ sudo systemctl restart networking
 ```
+
 {{% notice note %}}
 You may access the VM using the IP via SSH and can complete all remaining steps from that session (for copy paste :) )
 {{% /notice %}}
 - Change Host name
+
+##### Execute below steps only on worker node
 
 ```shell
 $ HOST_NAME=<host name> # <--- Replace <host name> with corresponding one
@@ -130,6 +132,7 @@ InitiatorName=iqn.1993-08.org.debian:01:HOST_NAME  #<--- Append HostName to have
 $ sudo rm /etc/machine-id /var/lib/dbus/machine-id
 $ sudo systemd-machine-id-setup
 ```
+##### Execute below steps on both master and worker nodes
 
 - Remove 127.0.1.1 entry from /etc/hosts
 
@@ -160,13 +163,12 @@ $ sudo vi /etc/fstab
 # /dev/mapper/k8s--master--01--vg-swap_1 none            swap    sw              0       0
 ```
 
-- Reboot VM
+- Reboot VMs
 
 ```shell
 $ sudo reboot
 ```
 
-Repeat the steps above for second VM
 {{% notice note %}}
-Do a ping test to make sure all VMs can reach each other.
+Do a ping test to make sure both VMs can reach each other.
 {{% /notice %}}
