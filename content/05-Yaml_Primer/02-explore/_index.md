@@ -8,16 +8,16 @@ pre = "<b>- </b>"
 
 # Exploring Object Specs
 
-So lets discuss about a new command `kubectl explore` so that we don't have to remember all YAML specs of kubernetes objects.
+So lets discuss about a new command `kubectl explain` so that we don't have to remember all YAML specs of kubernetes objects.
 
-With `kubectl explore` subcommand , you can see the specification of each objects and can use that as a reference to write your `YAML` files.
+With `kubectl explain` subcommand , you can see the specification of each objects and can use that as a reference to write your `YAML` files.
 
 #### Fist level spec
 
-We will use `kubectl explore Pod` command to see the specifications of a Pod YAML.
+We will use `kubectl explain Pod` command to see the specifications of a Pod YAML.
 
 ```
-$ kubectl explore Pod
+$ kubectl explain Pod
 ```
 
 Output
@@ -142,7 +142,7 @@ Now the Pod have two containers .
 
 How I know the containers array element need `name` and `image` ?
 
-We will use explore command to get those details.
+We will use explain command to get those details.
 ```shell
 $ kubectl explain pod.spec.containers
 ```
