@@ -8,7 +8,7 @@ pre = "<b>- </b>"
 
 # Kubernetes
 
-Pet vs Cattle
+Pet vs Cattle.
 
 In the pets service model, each pet server is given a loving names like zeus, ares, hades, poseidon, and athena. They are “unique, lovingly hand-raised, and cared for, and when they get sick, you nurse them back to health”. You scale these up by making them bigger, and when they are unavailable, everyone notices.
 
