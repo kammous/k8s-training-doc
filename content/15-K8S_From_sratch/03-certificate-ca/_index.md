@@ -1,7 +1,7 @@
 +++
 menutitle = "CA Configuration"
 date = 2018-12-29T17:15:52Z
-weight = 2
+weight = 3
 chapter = false
 pre = "<b>- </b>"
 +++
@@ -80,9 +80,10 @@ EOF
 ```shell
 $ cfssl gencert -initca ca-csr.json |cfssljson -bare ca
 ```
-- Output.
 
-```
+- Output
+
+```ruby
 2018/10/01 22:03:14 [INFO] generating a new CA key and certificate from CSR
 2018/10/01 22:03:14 [INFO] generate received request
 2018/10/01 22:03:14 [INFO] received CSR
@@ -90,6 +91,7 @@ $ cfssl gencert -initca ca-csr.json |cfssljson -bare ca
 2018/10/01 22:03:14 [INFO] encoded CSR
 2018/10/01 22:03:14 [INFO] signed certificate with serial number 621260968886516247086480084671432552497699065843
 ```
+
 - ca.pem , ca-key.pem, ca.csr files will be created , but we need only ca.pem and ca-key.pem
 
 ```shell

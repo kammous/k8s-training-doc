@@ -1,7 +1,7 @@
 +++
 menutitle = "Tools"
 date = 2018-12-29T17:15:52Z
-weight = 3
+weight = 2
 chapter = false
 pre = "<b>- </b>"
 +++
@@ -51,11 +51,13 @@ wget https://storage.googleapis.com/kubernetes-release/release/v1.12.0/bin/linux
 $ chmod +x kubectl
 $ sudo mv kubectl /usr/local/bin/
 ```
+
 - Verification
 
 ```shell
 $ kubectl version --client
 ```
+
 - Output
 
 ```console
