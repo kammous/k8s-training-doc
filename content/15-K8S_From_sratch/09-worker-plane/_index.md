@@ -22,7 +22,7 @@ The following components will be installed on each node.
 
 Instructions are [here](/02-installation/04-docker-install)
 
-Once docker is installer , execute below steps to make docker ready for `kubelet` integration.
+Once docker is installed , execute below steps to make docker ready for `kubelet` integration.
 
 ```shell
 $ vi /lib/systemd/system/docker.service
