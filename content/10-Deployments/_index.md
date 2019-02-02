@@ -2,7 +2,7 @@
 title = "Deployments"
 menuTitle = "10. Deployments"
 date = 2018-12-29T17:15:52Z
-weight = 9
+weight = 10
 chapter = true
 
 +++

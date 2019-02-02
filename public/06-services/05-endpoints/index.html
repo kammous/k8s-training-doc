@@ -1,0 +1,3463 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.54-DEV" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title> :: Kubernetes Training</title>
+
+    
+    <link href="/css/nucleus.css?1549090469" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1549090469" rel="stylesheet">
+    <link href="/css/hybrid.css?1549090469" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1549090469" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1549090469" rel="stylesheet">
+    <link href="/css/auto-complete.css?1549090469" rel="stylesheet">
+    <link href="/css/theme.css?1549090469" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1549090469" rel="stylesheet">
+    
+      <link href="/css/theme-mine.css?1549090469" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1549090469"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/06-services/05-endpoints/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         viewBox="-130 -10 415 32" width="400pt" height="42pt" enable-background="new -124 -12.3 271 40.6" xml:space="preserve">
+<path fill="#326DE6" d="M-84,15l-8.9,10.9c-0.8,1-1.9,1.6-3.2,1.6h-14.1c-1.2,0-2.4-0.7-3.2-1.6l-8.9-10.9c-0.7-0.9-1-2.3-0.7-3.5
+        l3-13.6c0.2-1.1,1.1-2.3,2.3-2.7l12.7-6.1c0.5-0.2,1.1-0.5,1.7-0.5c0.6,0,1.2,0.2,1.8,0.5l12.7,6.1c1.1,0.5,2,1.6,2.3,2.7l3,13.6
+        C-82.9,12.7-83.3,14.1-84,15z"/>
+<path fill="#FFFFFF" d="M-82.4,11.7l-3.2-14.3c-0.2-1.2-1.2-2.4-2.4-2.8l-13.3-6.4c-0.6-0.2-1.3-0.5-1.9-0.5c-0.6,0-1.3,0.2-1.8,0.5
+        l-13.3,6.4c-1.2,0.5-2.1,1.6-2.4,2.8l-3.2,14.3c-0.4,1.3,0,2.7,0.7,3.7l9.3,11.4c0.8,0.9,2,1.6,3.3,1.6h14.7c1.3,0,2.5-0.6,3.3-1.6
+        l9.3-11.4C-82.4,14.4-81.9,12.9-82.4,11.7z M-84.5,14.2l-9.2,11.4c-0.5,0.7-1.2,0.9-2,0.9h-14.7c-0.7,0-1.5-0.4-2-0.9l-9.2-11.4
+        c-0.5-0.6-0.6-1.4-0.5-2.1l3.3-14.4c0.1-0.7,0.7-1.3,1.3-1.6l13.3-6.4c0.4-0.1,0.7-0.1,1.1-0.1c0.4,0,0.7,0,1.1,0.2l13.3,6.4
+        c0.7,0.4,1.2,0.9,1.4,1.6l3.3,14.3C-83.9,12.8-84.1,13.7-84.5,14.2z"/>
+<path fill="#FFFFFF" d="M-89.8,11L-89.8,11L-89.8,11L-89.8,11C-89.8,11-89.9,11-89.8,11C-89.9,11-89.9,11-89.8,11
+        C-89.9,10.9-89.9,10.9-89.8,11c-0.2,0-0.2-0.1-0.3-0.1c-0.2,0-0.4,0-0.5-0.1c-0.1,0-0.2,0-0.3,0l0,0c-0.5-0.1-1-0.1-1.4-0.3
+        c-0.2-0.1-0.3-0.2-0.3-0.3c0,0,0,0,0-0.1l0,0l0,0l0,0l0,0l0,0l-0.4-0.1c0.2-1.2,0.1-2.4-0.2-3.7s-0.8-2.3-1.4-3.4l0.3-0.3l0,0l0,0
+        l0,0l0,0l0,0l0,0c0,0,0,0,0-0.1s0-0.3,0.2-0.4c0.3-0.3,0.7-0.5,1.2-0.8l0,0c0.1,0,0.2-0.1,0.2-0.1c0.2-0.1,0.3-0.2,0.5-0.3l0.1-0.1
+        c0,0,0,0,0.1-0.1l0,0l0,0c0.4-0.3,0.5-0.8,0.2-1.2c-0.2-0.2-0.4-0.3-0.6-0.3c-0.2,0-0.4,0.1-0.5,0.2l0,0l0,0l0,0l0,0l0,0
+        c0,0,0,0-0.1,0l-0.1,0.1c-0.2,0.1-0.3,0.3-0.4,0.4c-0.1,0.1-0.1,0.1-0.2,0.2l0,0c-0.4,0.4-0.7,0.7-1.1,1c-0.1,0.1-0.2,0.1-0.3,0.1
+        s-0.1,0-0.2,0c0,0,0,0-0.1,0l0,0l0,0l0,0l0,0l0,0l-0.3,0.2c-0.4-0.4-0.7-0.7-1.1-1c-1.5-1.3-3.5-2-5.5-2.2V-2l0,0l0,0l0,0l0,0l0,0
+        l0,0c-0.1-0.1-0.2-0.2-0.2-0.4c0-0.5,0-0.9,0.1-1.4l0,0c0-0.1,0-0.2,0-0.3c0.1-0.1,0.1-0.2,0.1-0.4c0,0,0-0.1,0-0.2v-0.1l0,0l0,0
+        l0,0l0,0l0,0c0-0.5-0.4-0.9-0.8-0.9c-0.2,0-0.5,0.1-0.5,0.3c-0.2,0.2-0.3,0.4-0.3,0.6l0,0l0,0l0,0l0,0l0,0c0,0,0,0,0,0.1
+        c0,0.1,0,0.1,0,0.2c0,0.2,0,0.4,0.1,0.5c0,0.1,0,0.2,0,0.3l0,0c0.1,0.5,0.1,1,0.1,1.4c0,0.2-0.1,0.3-0.2,0.4l0,0l0,0l0,0l0,0l0,0
+        l0,0v0.4c-0.5,0-1,0.1-1.4,0.2c-2,0.5-3.8,1.4-5.1,3l-0.3-0.2l0,0l0,0l0,0l0,0l0,0l0,0c0,0,0,0-0.1,0s-0.1,0-0.2,0
+        c-0.1,0-0.2,0-0.3-0.1c-0.4-0.3-0.7-0.5-1.1-1l0,0c-0.1-0.1-0.1-0.1-0.2-0.2c-0.1-0.1-0.2-0.3-0.4-0.4l-0.1-0.1c0,0,0,0-0.1-0.1l0,0
+        l0,0c-0.2-0.1-0.4-0.2-0.5-0.2c-0.3,0-0.5,0.1-0.6,0.3c-0.3,0.4-0.2,0.9,0.2,1.2l0,0l0,0l0,0l0,0l0,0l0.1,0.1
+        c0.2,0.1,0.3,0.2,0.5,0.3c0.1,0,0.2,0.1,0.3,0.1l0,0c0.5,0.3,0.9,0.5,1.2,0.8c0.1,0.1,0.1,0.3,0.2,0.4c0,0,0,0,0,0.1l0,0l0,0l0,0
+        l0,0l0,0l0.3,0.3c-0.1,0.1-0.1,0.2-0.2,0.2c-1.4,2.1-1.8,4.5-1.4,7l-0.4,0.2l0,0l0,0l0,0l0,0l0,0l0,0c0,0,0,0,0,0.1
+        c-0.1,0.1-0.1,0.2-0.3,0.3c-0.4,0.1-0.9,0.2-1.4,0.3l0,0c-0.1,0-0.2,0-0.3,0c-0.2,0-0.4,0-0.5,0.1c0,0-0.1,0-0.2,0h-0.1l0,0l0,0l0,0
+        l0,0l0,0c-0.5,0.1-0.7,0.5-0.6,1c0.1,0.4,0.5,0.6,0.8,0.6c0.1,0,0.1,0,0.2,0l0,0l0,0l0,0l0,0l0,0c0,0,0,0,0.1,0s0.1,0,0.2,0
+        c0.2-0.1,0.4-0.1,0.5-0.2c0.1,0,0.2-0.1,0.3-0.1l0,0c0.5-0.2,0.9-0.4,1.4-0.4c0,0,0,0,0.1,0c0.2,0,0.3,0.1,0.4,0.1c0,0,0,0,0.1,0
+        l0,0l0,0l0,0l0,0l0,0l0.4-0.1c0.6,1.9,1.8,3.7,3.4,5c0.4,0.3,0.7,0.5,1.1,0.8l-0.2,0.4l0,0l0,0l0,0l0,0l0,0c0,0,0,0,0,0.1
+        c0.1,0.1,0.1,0.3,0,0.5c-0.2,0.4-0.4,0.8-0.7,1.3l0,0c-0.1,0.1-0.1,0.2-0.2,0.2c-0.1,0.1-0.2,0.3-0.3,0.5c0,0,0,0.1-0.1,0.2
+        c0,0,0,0,0,0.1l0,0l0,0l0,0l0,0l0,0c-0.2,0.5-0.1,0.9,0.4,1.2c0.1,0.1,0.2,0.1,0.4,0.1c0.4,0,0.6-0.2,0.8-0.5l0,0l0,0l0,0l0,0l0,0
+        c0,0,0,0,0-0.1s0.1-0.1,0.1-0.2c0.1-0.2,0.1-0.4,0.2-0.5c0-0.1,0-0.2,0.1-0.3l0,0c0.2-0.5,0.4-1,0.5-1.4c0.1-0.2,0.2-0.2,0.4-0.2
+        c0,0,0,0,0.1,0l0,0l0,0l0,0l0,0l0,0l0.2-0.4c1.2,0.5,2.4,0.7,3.7,0.7c0.7,0,1.5-0.1,2.3-0.3c0.5-0.1,0.9-0.3,1.4-0.4l0.2,0.3l0,0
+        l0,0l0,0l0,0l0,0l0,0c0,0,0,0,0.1,0s0.3,0.1,0.4,0.2c0.2,0.4,0.4,0.8,0.5,1.4l0,0c0,0.1,0.1,0.2,0.1,0.3c0,0.2,0.1,0.3,0.2,0.5
+        c0,0,0,0.1,0.1,0.2c0,0,0,0,0,0.1l0,0l0,0l0,0l0,0l0,0c0.2,0.3,0.5,0.5,0.8,0.5c0.1,0,0.2,0,0.4-0.1s0.4-0.3,0.4-0.5
+        c0.1-0.2,0-0.5-0.1-0.6l0,0l0,0l0,0l0,0l0,0c0,0,0,0,0-0.1s-0.1-0.1-0.1-0.2c-0.1-0.2-0.2-0.3-0.3-0.5c-0.1-0.1-0.1-0.2-0.2-0.2l0,0
+        c-0.3-0.5-0.5-0.8-0.7-1.3c-0.1-0.2,0-0.3,0-0.5c0,0,0,0,0-0.1l0,0l0,0l0,0l0,0l0,0l-0.1-0.5c1.4-0.8,2.6-2,3.4-3.3
+        c0.5-0.7,0.8-1.5,1.1-2.3l0.4,0.1l0,0l0,0l0,0l0,0l0,0l0,0c0,0,0,0,0.1,0c0.1-0.1,0.2-0.1,0.4-0.1l0,0c0.5,0.1,0.9,0.2,1.4,0.4l0,0
+        c0.1,0,0.2,0.1,0.3,0.1c0.2,0.1,0.3,0.1,0.5,0.2c0,0,0.1,0,0.2,0h0.1l0,0l0,0c0.1,0,0.1,0,0.2,0c0.4,0,0.7-0.3,0.8-0.6
+        C-89,11.5-89.3,11.1-89.8,11z M-102,9.6l-1.2,0.5l-1.2-0.5l-0.3-1.2l0.8-1h1.3l0.8,1L-102,9.6z M-95.1,6.9c0.2,0.9,0.3,1.8,0.2,2.6
+        L-99,8.4l0,0c-0.4-0.1-0.5-0.5-0.5-0.8c0-0.1,0.1-0.2,0.2-0.3l3.2-2.9C-95.6,5.2-95.3,6-95.1,6.9z M-97.4,2.9l-3.4,2.4
+        c-0.3,0.2-0.7,0.1-0.9-0.2c-0.1-0.1-0.1-0.2-0.1-0.3l-0.3-4.2C-100.2,0.8-98.6,1.6-97.4,2.9z M-104.9,0.7c0.3-0.1,0.5-0.1,0.8-0.2
+        l-0.3,4.2l0,0c0,0.4-0.4,0.6-0.7,0.6c-0.1,0-0.3,0-0.4-0.1l-3.5-2.4C-107.8,1.8-106.5,1-104.9,0.7z M-110.2,4.4l3.2,2.8l0,0
+        c0.3,0.3,0.4,0.6,0.1,1c-0.1,0.1-0.2,0.2-0.3,0.2l-4.1,1.2C-111.5,7.8-111.1,6-110.2,4.4z M-110.8,11.5l4.2-0.7
+        c0.4,0,0.6,0.2,0.7,0.5c0,0.2,0,0.3,0,0.5l0,0l-1.6,3.9C-109,14.7-110.2,13.2-110.8,11.5z M-101.2,16.8c-0.6,0.2-1.2,0.2-1.8,0.2
+        c-0.9,0-1.8-0.2-2.6-0.5l2.1-3.8c0.2-0.3,0.5-0.4,0.8-0.2c0.2,0.1,0.3,0.2,0.3,0.3l0,0l2,3.6C-100.7,16.7-101,16.7-101.2,16.8z
+         M-96.2,13.1c-0.6,1.1-1.5,1.9-2.5,2.5l-1.6-4c-0.1-0.4,0.1-0.6,0.4-0.8c0.1-0.1,0.3-0.1,0.4-0.1l4.2,0.7
+        C-95.5,12.1-95.8,12.6-96.2,13.1z"/>
+<path id="path254" fill="#FFFFFF" d="M-65.4,9c0.3-0.4,0.6-0.7,1-1.2c0.4-0.5,0.6-0.8,0.9-1.3s0.6-0.9,0.9-1.3
+        c0.3-0.5,0.5-0.8,0.7-1.2h3.9c-0.3,0.4-0.6,0.8-1.1,1.4c-0.4,0.5-0.8,1-1.3,1.4c-0.5,0.5-0.9,1-1.3,1.4c-0.5,0.5-0.8,0.9-1.2,1.3
+        c0.5,0.5,0.9,0.9,1.4,1.5c0.5,0.6,1,1.2,1.5,1.8c0.5,0.6,0.9,1.3,1.4,1.9c0.5,0.6,0.7,1.2,1,1.7h-3.7c-0.2-0.5-0.5-0.9-0.8-1.4
+        c-0.4-0.5-0.7-1.1-1.1-1.6c-0.4-0.5-0.8-1.1-1.2-1.5c-0.4-0.5-0.7-0.9-1.1-1.2v5.9h-3.3V-1.2l3.3-0.5L-65.4,9L-65.4,9z"/>
+<path id="path256" fill="#FFFFFF" d="M-45.6,16c-0.6,0.2-1.4,0.3-2.2,0.5c-0.8,0.2-1.8,0.3-2.8,0.3c-1,0-1.8-0.2-2.5-0.5
+        c-0.6-0.3-1.2-0.7-1.5-1.2c-0.4-0.5-0.6-1.1-0.8-1.8c-0.2-0.7-0.2-1.4-0.2-2.3V4.1h3.3v6.5c0,1.2,0.2,2,0.5,2.5
+        c0.3,0.5,0.8,0.8,1.6,0.8c0.5,0,1,0,1.4-0.1V4.1h3.3V16L-45.6,16z"/>
+<path id="path258" fill="#FFFFFF" d="M-34.9,10.3c0-1.2-0.2-2.1-0.5-2.6c-0.4-0.6-1-0.9-1.7-0.9c-0.4,0-0.7,0.1-1,0.2
+        c-0.4,0.1-0.6,0.2-0.9,0.4v6.6c0.3,0.1,0.5,0.1,0.8,0.1c0.3,0,0.5,0,0.7,0c0.8,0,1.5-0.3,2-0.8C-35.1,12.5-34.9,11.6-34.9,10.3
+        L-34.9,10.3z M-31.6,10.3c0,1-0.1,1.9-0.4,2.7c-0.3,0.8-0.6,1.4-1.2,2.1c-0.5,0.5-1.2,1-1.9,1.3c-0.7,0.3-1.5,0.5-2.5,0.5
+        c-0.8,0-1.7-0.1-2.6-0.2s-1.6-0.3-2.2-0.5V-1.2l3.3-0.5v6.1c0.5-0.2,0.9-0.4,1.4-0.5c0.5-0.1,0.8-0.1,1.3-0.1c0.8,0,1.5,0.2,2.2,0.5
+        c0.6,0.3,1.1,0.7,1.5,1.4c0.5,0.5,0.7,1.3,0.9,2.1C-31.7,8.5-31.6,9.4-31.6,10.3"/>
+<path id="path260" fill="#FFFFFF" d="M-30,10.4c0-1.1,0.2-2.1,0.5-2.9c0.4-0.8,0.8-1.5,1.4-2.1c0.5-0.5,1.2-1,1.9-1.3
+        c0.7-0.3,1.4-0.5,2.2-0.5c1.8,0,3.3,0.5,4.2,1.6c0.9,1.1,1.4,2.6,1.4,4.7c0,0.2,0,0.5,0,0.6c0,0.3,0,0.5,0,0.5h-8
+        c0,0.8,0.4,1.4,1,1.9c0.6,0.5,1.5,0.7,2.6,0.7c0.6,0,1.3-0.1,1.9-0.2c0.6-0.2,1.1-0.3,1.4-0.5L-19,16c-0.5,0.2-1.2,0.4-1.8,0.5
+        c-0.6,0.1-1.4,0.2-2.2,0.2c-1.1,0-2-0.2-2.8-0.5c-0.8-0.3-1.5-0.6-2.2-1.2c-0.5-0.5-1-1.2-1.4-2C-29.9,12.3-30,11.4-30,10.4
+        L-30,10.4z M-21.7,9.1c0-0.4,0-0.6-0.1-1c-0.1-0.3-0.3-0.5-0.5-0.8C-22.5,7-22.7,6.8-23,6.6c-0.3-0.2-0.6-0.2-1.1-0.2
+        c-0.5,0-0.8,0.1-1.1,0.2c-0.3,0.2-0.5,0.4-0.7,0.5c-0.2,0.3-0.4,0.5-0.5,0.8c-0.1,0.3-0.2,0.6-0.2,1L-21.7,9.1L-21.7,9.1z"/>
+<path id="path262" fill="#FFFFFF" d="M-6.2,7.4c-0.2-0.1-0.5-0.1-0.7-0.2C-7.2,7.1-7.5,7.1-7.8,7c-0.3,0-0.5-0.1-0.9-0.1
+        c-0.3,0-0.5,0-0.7,0c-0.5,0-0.9,0-1.4,0.1c-0.5,0-0.9,0.1-1.4,0.3v9.2h-3.3V4.9c0.9-0.3,1.7-0.5,2.6-0.7c0.9-0.2,2-0.3,3.2-0.3
+        c0.2,0,0.5,0,0.7,0c0.4,0,0.6,0.1,1,0.1c0.4,0,0.7,0.1,1.1,0.2c0.4,0.1,0.7,0.2,1,0.3L-6.2,7.4L-6.2,7.4z"/>
+<path id="path264" fill="#FFFFFF" d="M-2.9,4.5C-2.3,4.3-1.6,4.2-0.7,4c0.8-0.2,1.8-0.2,2.8-0.2S3.9,4,4.5,4.3s1.2,0.6,1.5,1.2
+        C6.4,6,6.7,6.6,6.9,7.3s0.3,1.4,0.3,2.3v7H3.9V10c0-1.2-0.1-2-0.4-2.5C3.3,6.9,2.7,6.7,1.9,6.7c-0.3,0-0.5,0-0.7,0s-0.5,0-0.7,0.1
+        v9.7h-3.3L-2.9,4.5L-2.9,4.5z"/>
+<path id="path266" fill="#FFFFFF" d="M9.4,10.4c0-1.1,0.2-2.1,0.5-2.9c0.4-0.8,0.8-1.5,1.4-2.1c0.5-0.5,1.2-1,1.9-1.3
+        s1.4-0.5,2.2-0.5c1.8,0,3.3,0.5,4.2,1.6C20.4,6.5,21,8,21,10.1c0,0.2,0,0.5,0,0.6c0,0.3,0,0.5,0,0.5h-8c0,0.8,0.4,1.4,1,1.9
+        c0.6,0.5,1.5,0.7,2.6,0.7c0.6,0,1.3-0.1,1.9-0.2c0.6-0.2,1.1-0.3,1.4-0.5l0.5,2.8c-0.5,0.2-1.2,0.4-1.8,0.5
+        c-0.6,0.1-1.4,0.2-2.2,0.2c-1.1,0-2-0.2-2.8-0.5c-0.8-0.3-1.5-0.6-2.2-1.2c-0.5-0.5-1-1.2-1.4-2C9.6,12.3,9.4,11.4,9.4,10.4
+        L9.4,10.4z M17.7,9.1c0-0.4,0-0.6-0.1-1c-0.1-0.3-0.3-0.5-0.5-0.8C17,7,16.7,6.8,16.5,6.6c-0.3-0.2-0.6-0.2-1.1-0.2
+        s-0.8,0.1-1.1,0.2C14,6.8,13.8,7,13.6,7.2c-0.2,0.3-0.4,0.5-0.5,0.8c-0.1,0.3-0.2,0.6-0.2,1L17.7,9.1L17.7,9.1z"/>
+<path id="path268" fill="#FFFFFF" d="M25.5,6.8h-2.8V4.1h2.8V1l3.3-0.5v3.6h5.1v2.7h-5.1v5c0,0.5,0,0.8,0.1,1.1
+        c0.1,0.3,0.2,0.5,0.4,0.6c0.2,0.2,0.4,0.3,0.5,0.3c0.3,0.1,0.5,0.1,0.7,0.1c0.3,0,0.5,0,0.8,0c0.3,0,0.5-0.1,0.7-0.1
+        c0.3,0,0.5-0.1,0.7-0.2c0.3-0.1,0.5-0.2,0.8-0.4L34,16c-0.6,0.3-1.3,0.5-1.9,0.5c-0.7,0.1-1.4,0.2-2,0.2c-0.7,0-1.4-0.1-2-0.2
+        c-0.5-0.1-1.1-0.4-1.4-0.7c-0.4-0.4-0.7-0.8-0.9-1.4c-0.2-0.6-0.3-1.4-0.3-2.5V6.8L25.5,6.8z"/>
+<path id="path270" fill="#FFFFFF" d="M35.7,10.4c0-1.1,0.2-2.1,0.5-2.9c0.4-0.8,0.8-1.5,1.4-2.1c0.5-0.5,1.2-1,1.9-1.3
+        c0.7-0.3,1.4-0.5,2.2-0.5c1.8,0,3.3,0.5,4.2,1.6c0.9,1.1,1.4,2.6,1.4,4.7c0,0.2,0,0.5,0,0.6c0,0.3,0,0.5,0,0.5h-8
+        c0,0.8,0.4,1.4,1,1.9c0.6,0.5,1.5,0.7,2.6,0.7c0.6,0,1.3-0.1,1.9-0.2c0.6-0.2,1.1-0.3,1.4-0.5l0.5,2.8c-0.5,0.2-1.2,0.4-1.8,0.5
+        c-0.6,0.1-1.4,0.2-2.2,0.2c-1.1,0-2-0.2-2.8-0.5c-0.8-0.3-1.5-0.6-2.2-1.2c-0.5-0.5-1-1.2-1.4-2C35.9,12.3,35.7,11.4,35.7,10.4
+        L35.7,10.4z M44,9.1c0-0.4,0-0.6-0.1-1c-0.1-0.3-0.3-0.5-0.5-0.8C43.3,7,43,6.8,42.8,6.6c-0.3-0.2-0.6-0.2-1.1-0.2
+        c-0.5,0-0.8,0.1-1.1,0.2C40.3,6.8,40,7,39.9,7.2c-0.2,0.3-0.4,0.5-0.5,0.8c-0.1,0.3-0.2,0.6-0.2,1L44,9.1L44,9.1z"/>
+<path id="path272" fill="#FFFFFF" d="M54,14.1c0.8,0,1.4-0.1,1.8-0.2s0.6-0.4,0.6-0.7c0-0.3-0.1-0.5-0.2-0.5
+        c-0.1-0.2-0.3-0.3-0.5-0.5c-0.3-0.1-0.5-0.2-0.8-0.4c-0.3-0.1-0.6-0.2-1-0.3c-0.5-0.2-1-0.3-1.4-0.5c-0.5-0.2-0.9-0.5-1.4-0.7
+        c-0.4-0.3-0.7-0.6-1-1.1c-0.3-0.5-0.4-1-0.4-1.6c0-0.5,0.1-1,0.3-1.4s0.5-0.9,0.9-1.3c0.4-0.4,1-0.6,1.6-0.8C53.2,3.9,54,3.8,55,3.8
+        c0.8,0,1.5,0.1,2.3,0.2c0.7,0.1,1.3,0.3,1.8,0.5l-0.5,2.7c-0.3-0.1-0.7-0.3-1.4-0.5c-0.6-0.2-1.4-0.3-2.2-0.3
+        c-0.8,0-1.4,0.1-1.6,0.3c-0.3,0.2-0.5,0.5-0.5,0.6S53,7.8,53.1,8c0.1,0.2,0.3,0.3,0.5,0.5c0.2,0.1,0.5,0.3,0.7,0.4
+        C54.6,8.9,55,9,55.2,9.2c0.5,0.2,1,0.4,1.4,0.5c0.5,0.2,1,0.5,1.4,0.7c0.5,0.3,0.7,0.6,1,1.1c0.3,0.5,0.4,1,0.4,1.6
+        c0,0.5-0.1,1-0.3,1.4c-0.2,0.5-0.5,0.8-1,1.2c-0.5,0.4-1,0.6-1.7,0.8c-0.7,0.2-1.6,0.3-2.6,0.3c-1.1,0-2-0.1-2.7-0.4
+        c-0.7-0.3-1.4-0.5-1.8-0.6l0.5-2.7c0.6,0.3,1.3,0.5,2,0.7C52.6,14,53.3,14.1,54,14.1"/>
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1549090469"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1549090469"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1549090469"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/01-introduction/" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/01-introduction/">
+          1. Introduction
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/01-introduction/01-linux-kernel/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/01-introduction/01-linux-kernel/">
+          <b>- </b>Linux Kernel
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/01-introduction/02-namespaces/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/01-introduction/02-namespaces/">
+          <b>- </b>Linux Namespaces
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/01-introduction/03-cgroups/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/01-introduction/03-cgroups/">
+          <b>- </b>CGroups
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/01-introduction/04-containers/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/01-introduction/04-containers/">
+          <b>- </b>Continers
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/01-introduction/07-network-plugins/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/01-introduction/07-network-plugins/">
+          <b>- </b>Container Networking
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/01-introduction/05-docker/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/01-introduction/05-docker/">
+          <b>- </b>Docker
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/01-introduction/06-kubernetes/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/01-introduction/06-kubernetes/">
+          <b>- </b>Kubernetes
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/02-installation/" title="Installation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/02-installation/">
+          2. Installation
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/02-installation/01-vbox-install/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/02-installation/01-vbox-install/">
+          <b>- </b>Install VirtualBox
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/02-installation/02-nw-setup/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/02-installation/02-nw-setup/">
+          <b>- </b>VirtualBox Network
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/02-installation/03-ubuntu-install/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/02-installation/03-ubuntu-install/">
+          <b>- </b>Install Ubuntu 16.04
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/02-installation/04-docker-install/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/02-installation/04-docker-install/">
+          <b>- </b>Install Docker
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/02-installation/05-golang-setup/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/02-installation/05-golang-setup/">
+          <b>- </b>Setup Golang
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/02-installation/06-demo-webapp/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/02-installation/06-demo-webapp/">
+          <b>- </b>Build a Demo WebApp
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/02-installation/07-build-docker-image/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/02-installation/07-build-docker-image/">
+          <b>- </b>Build a Docker image
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/02-installation/08-run-docker/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/02-installation/08-run-docker/">
+          <b>- </b>Run a Docker container
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/02-installation/09-install-kubeadm/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/02-installation/09-install-kubeadm/">
+          <b>- </b>Install kubeadm
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/02-installation/10-master/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/02-installation/10-master/">
+          <b>- </b>Deploy master node
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/02-installation/11-network-plugin/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/02-installation/11-network-plugin/">
+          <b>- </b>Deploy Calico
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/02-installation/12-worker/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/02-installation/12-worker/">
+          <b>- </b>Add worker node
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/03-pods/" title="Pods &amp; Nodes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/03-pods/">
+          3. Pods &amp; Nodes
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/03-pods/01-what-is-pod/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/03-pods/01-what-is-pod/">
+          <b>- </b>Introduction
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/03-pods/02-create-pod/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/03-pods/02-create-pod/">
+          <b>- </b>Create a Pod - Declarative
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/03-pods/03-create-pod/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/03-pods/03-create-pod/">
+          <b>- </b>Create a Pod - Imperative
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/03-pods/04-nodes/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/03-pods/04-nodes/">
+          <b>- </b>Nodes
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/03-pods/05-namespaces/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/03-pods/05-namespaces/">
+          <b>- </b>Namespaces
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/03-pods/06-self-healing-readiness/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/03-pods/06-self-healing-readiness/">
+          <b>- </b>Self Healing - Readiness
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/03-pods/07-self-healing-liveness/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/03-pods/07-self-healing-liveness/">
+          <b>- </b>Self Healing - Liveness
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/03-pods/08-request-limits/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/03-pods/08-request-limits/">
+          <b>- </b>Resource Allocation
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/04-labels_and_annotations/" title="Labels &amp; Annotations" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/04-labels_and_annotations/">
+          4. Labels &amp; Annotations
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/04-labels_and_annotations/01-labels/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/04-labels_and_annotations/01-labels/">
+          <b>- </b>Labels
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/04-labels_and_annotations/02-annotations/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/04-labels_and_annotations/02-annotations/">
+          <b>- </b>Annotations
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/05-yaml_primer/" title="YAML Crash course" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/05-yaml_primer/">
+          5. YAML Crash course
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/05-yaml_primer/01-structure/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/05-yaml_primer/01-structure/">
+          <b>- </b>K8S YAML structure
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/05-yaml_primer/02-explore/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/05-yaml_primer/02-explore/">
+          <b>- </b>Exploring Object Specs
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/06-services/" title="Services" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/06-services/">
+          6. Services
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/06-services/01-expose-pod/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/06-services/01-expose-pod/">
+          <b>- </b>Expose Pod
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/06-services/02-nodeport/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/06-services/02-nodeport/">
+          <b>- </b>NodePort
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/06-services/03-clusterip/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/06-services/03-clusterip/">
+          <b>- </b>ClusterIP
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/06-services/04-loadbalancer/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/06-services/04-loadbalancer/">
+          <b>- </b>LoadBalancer
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/06-services/05-endpoints/" title="" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/06-services/05-endpoints/">
+          <b>- </b>Endpoints
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/07-multi_container_pod/" title="Multi-Container Pods" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/07-multi_container_pod/">
+          7. Multi-Container Pods
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/07-multi_container_pod/01-env-inject/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/07-multi_container_pod/01-env-inject/">
+          <b>- </b>Inject data to Pod
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/07-multi_container_pod/02-volumes/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/07-multi_container_pod/02-volumes/">
+          <b>- </b>Introduction to Volumes
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/07-multi_container_pod/03-init-container/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/07-multi_container_pod/03-init-container/">
+          <b>- </b>InitContainer
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/07-multi_container_pod/04-pod-patterns/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/07-multi_container_pod/04-pod-patterns/">
+          <b>- </b>Pod design patterns
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/07-multi_container_pod/05-manual-schedule/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/07-multi_container_pod/05-manual-schedule/">
+          <b>- </b>Pod - manual scheduling
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/07-multi_container_pod/06-taints-and-tolerations/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/07-multi_container_pod/06-taints-and-tolerations/">
+          <b>- </b>Taints and Tolerations
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/08-api_reference/" title="API reference" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/08-api_reference/">
+          8. API reference
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/08-api_reference/01-api-access/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/08-api_reference/01-api-access/">
+          <b>- </b>API Access
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/08-api_reference/02-swagger-ui/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/08-api_reference/02-swagger-ui/">
+          <b>- </b>Swagger - UI
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/09-configmaps_and_secrets/" title="ConfigMaps and Secrets" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/09-configmaps_and_secrets/">
+          9. ConfigMaps and Secrets
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/09-configmaps_and_secrets/01-private-registry/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/09-configmaps_and_secrets/01-private-registry/">
+          <b>- </b>Setup a Private registry
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/09-configmaps_and_secrets/02-configmaps/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/09-configmaps_and_secrets/02-configmaps/">
+          <b>- </b>ConfigMaps
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/09-configmaps_and_secrets/03-access-configmap/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/09-configmaps_and_secrets/03-access-configmap/">
+          <b>- </b>Use ConfigMaps in Pods
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/09-configmaps_and_secrets/04-secrets/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/09-configmaps_and_secrets/04-secrets/">
+          <b>- </b>Create Secret
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/09-configmaps_and_secrets/05-use-secrets/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/09-configmaps_and_secrets/05-use-secrets/">
+          <b>- </b>Use Secret in Pods
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/10-deployments/" title="Deployments" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/10-deployments/">
+          10. Deployments
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/10-deployments/01-deployment/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/10-deployments/01-deployment/">
+          <b>- </b>Nginx Deployment
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/10-deployments/02-expose-deployment/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/10-deployments/02-expose-deployment/">
+          <b>- </b>Expose Nginx Deployment
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/10-deployments/03-scaling/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/10-deployments/03-scaling/">
+          <b>- </b>Scaling
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/11-daemonsets/" title="Deployments" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/11-daemonsets/">
+          11. DaemonSets
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/11-daemonsets/01-deamonset/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/11-daemonsets/01-deamonset/">
+          <b>- </b>DaemonSet
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/15-k8s_from_sratch/" title="K8S From Scratch" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/15-k8s_from_sratch/">
+          15. K8S From Scratch
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/15-k8s_from_sratch/01-api-access-controll/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/15-k8s_from_sratch/01-api-access-controll/">
+          <b>- </b>API Access Control
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/15-k8s_from_sratch/02-certificates-client-tools/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/15-k8s_from_sratch/02-certificates-client-tools/">
+          <b>- </b>Tools
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/15-k8s_from_sratch/03-certificate-ca/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/15-k8s_from_sratch/03-certificate-ca/">
+          <b>- </b>CA Configuration
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/15-k8s_from_sratch/04-client-and-server-certs/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/15-k8s_from_sratch/04-client-and-server-certs/">
+          <b>- </b>Client and Server Certificates
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/ansilh/k8s-training-doc/tree/master/content/06-Services/05-endpoints/_index.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/06-services/'>Services</a> > 
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li><a href="#pods-behind-a-service">Pods behind a service.</a></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1></h1>
+          
+
+        
+
+
+
+
+<h1 id="pods-behind-a-service">Pods behind a service.</h1>
+
+<p><img src="nodeport.png?classes=shadow" alt="NodePod" />
+Lets <code>describe</code> the service to see how the mapping of Pods works in a service object.</p>
+
+<p>(Yes , we are slowly moving from general wordings to pure kubernetes terms)</p>
+
+<pre><code class="language-yaml">$ kubectl describe service coffee
+Name:                     coffee
+Namespace:                default
+Labels:                   run=coffee
+Annotations:              &lt;none&gt;
+Selector:                 run=coffee
+Type:                     NodePort
+IP:                       192.168.10.86
+Port:                     &lt;unset&gt;  80/TCP
+TargetPort:               9090/TCP
+NodePort:                 &lt;unset&gt;  30391/TCP
+Endpoints:                10.10.1.13:9090
+Session Affinity:         None
+External Traffic Policy:  Cluster
+</code></pre>
+
+<p>Here the label <code>run=coffee</code> is the one which creates the mapping from service to Pod.</p>
+
+<p>Any pod with label <code>run=coffee</code> will be mapped under this service.</p>
+
+<p>Those mappings are called <code>Endpoints</code>.</p>
+
+<p>Lets see the <code>endpoints</code> of <code>service</code> <code>coffee</code></p>
+
+<pre><code class="language-shell">$ kubectl get endpoints  coffee
+NAME     ENDPOINTS         AGE
+coffee   10.10.1.13:9090   3h48m
+</code></pre>
+
+<p>As of now only one pod endpoint is mapped under this service.</p>
+
+<p>lets create one more Pod with same label and see how it affects endpoints.</p>
+
+<pre><code>$ kubectl run coffee01 --image=ansilh/demo-coffee --restart=Never --labels=run=coffee
+</code></pre>
+
+<p>Now we have one more Pod</p>
+
+<pre><code>$ kubectl get pods
+NAME       READY   STATUS    RESTARTS   AGE
+coffee     1/1     Running   0          15h
+coffee01   1/1     Running   0          6s
+</code></pre>
+
+<p>Lets check the endpoint</p>
+
+<pre><code>$ kubectl get endpoints  coffee
+NAME     ENDPOINTS                         AGE
+coffee   10.10.1.13:9090,10.10.1.19:9090   3h51m
+</code></pre>
+
+<p>Now we have two Pod endpoints mapped to this service.
+So the requests comes to coffee service will be served from these pods in a round robin fashion.</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/06-services/04-loadbalancer/" title=""> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/07-multi_container_pod/" title="Multi-Container Pods" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1549090469"></script>
+    <script src="/js/perfect-scrollbar.min.js?1549090469"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1549090469"></script>
+    <script src="/js/jquery.sticky.js?1549090469"></script>
+    <script src="/js/featherlight.min.js?1549090469"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1549090469"></script>
+    <script src="/js/highlight.pack.js?1549090469"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1549090469"></script>
+    <script src="/js/learn.js?1549090469"></script>
+    <script src="/js/hugo-learn.js?1549090469"></script>
+
+    <link href="/mermaid/mermaid.css?1549090469" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1549090469"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>

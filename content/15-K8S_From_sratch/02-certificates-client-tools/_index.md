@@ -21,6 +21,9 @@ $ chmod +x cfssl_linux-amd64 cfssljson_linux-amd64
 
 ```shell
 $ sudo mv cfssl_linux-amd64 /usr/local/bin/cfssl
+```
+
+```shell
 $ sudo mv cfssljson_linux-amd64 /usr/local/bin/cfssljson
 ```
 
@@ -42,7 +45,7 @@ Runtime: go1.6
 - Download `kubectl`
 
 ```shell
-wget https://storage.googleapis.com/kubernetes-release/release/v1.12.0/bin/linux/amd64/kubectl
+wget https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux/amd64/kubectl
 ```
 
 - Make it executable and move to one of the shell `$PATH`
