@@ -1,5 +1,5 @@
 +++
-title = "Deployments"
+title = "DaemonSets"
 menuTitle = "11. DaemonSets"
 date = 2018-12-29T17:15:52Z
 weight = 11
