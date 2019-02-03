@@ -9,6 +9,32 @@ pre = "<b>- </b>"
 
 # RBAC in Action
 
+### Role
+In the RBAC API, a role contains rules that represent a set of permissions. Permissions are purely additive (there are no “deny” rules). A role can be defined within a namespace with a Role, or cluster-wide with a ClusterRole
+
+### ClusterRole
+
+A ClusterRole can be used to grant the same permissions as a Role, but because they are cluster-scoped, they can also be used to grant access to:
+
+- cluster-scoped resources (like nodes)
+- non-resource endpoints (like “/healthz”)
+- namespaced resources (like pods) across all namespaces (needed to run kubectl get pods --all-namespaces, for example)
+
+### Role Binding
+
+A role binding grants the permissions defined in a role to a user or set of users. It holds a list of subjects (users, groups, or service accounts), and a reference to the role being granted. Permissions can be granted within a namespace with a RoleBinding
+
+
+### Cluster Role Binding
+
+A ClusterRoleBinding may be used to grant permission at the cluster level and in all namespaces
+
+
+A RoleBinding may also reference a ClusterRole to grant the permissions to namespaced resources defined in the ClusterRole within the RoleBinding’s namespace. This allows administrators to define a set of common roles for the entire cluster, then reuse them within multiple namespaces.
+
+We can read more about RBAC , Role , RoleBindings , ClusterRoles and ClusterRole Bindings [here](https://kubernetes.io/docs/reference/access-authn-authz/rbac)
+
+
 #### Scenario: Provide *read-only* access to *Pods* running in namespace *monitoring*
 
 ```
@@ -228,5 +254,3 @@ $ kubectl get pods --context=podview-context
 ```
 No resources found.
 ```
-
-We can read more about RBAC , Role , RoleBindings , ClusterRoles and ClusterRole Bindings [here](https://kubernetes.io/docs/reference/access-authn-authz/rbac)
