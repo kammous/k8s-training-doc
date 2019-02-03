@@ -7,4 +7,5 @@ pre = "<b>- </b>"
 +++
 
 # Mutual SSL Authentication
+
 ![Mutual SSL](mutualssl.png?class=shadow?width=80pc)

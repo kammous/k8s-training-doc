@@ -12,5 +12,3 @@ chapter = true
 # Accounts and RBACs
 
 In this chapter we will discuss about how k8s uses accounts and how to control resource access using RBAC.
-
-![Authentication & Authorization](auth.jpg?classes=shadow)
