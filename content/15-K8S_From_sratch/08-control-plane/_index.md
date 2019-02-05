@@ -136,7 +136,7 @@ Documentation=https://github.com/kubernetes/kubernetes
 
 [Service]
 ExecStart=/usr/local/bin/kube-controller-manager \\
-  --allocate-node-cidrs=true
+  --allocate-node-cidrs=true \\
   --bind-address=0.0.0.0 \\
   --cluster-cidr=10.10.0.0/16 \\
   --cluster-name=kubernetes \\
