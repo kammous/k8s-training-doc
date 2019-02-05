@@ -29,3 +29,4 @@ k8s@k8s-master-ah-01:~$
 k8s@k8s-master-ah-01:~$ kubectl logs date-print-1549217580-qmjxt
 Sun Feb  3 18:13:08 UTC 2019
 ```
+https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/

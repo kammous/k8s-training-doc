@@ -8,6 +8,9 @@ pre = "<b>- </b>"
 
 # Job
 
+A job creates one or more pods and ensures that a specified number of them successfully terminate.
+As pods successfully complete, the job tracks the successful completions. When a specified number of successful completions is reached, the job itself is complete. Deleting a Job will cleanup the pods it created.
+
 ```
 $ kubectl run date-print --image=ansilh/debug-tools  --restart=OnFailure  -- /bin/sh -c date
 
@@ -26,3 +29,5 @@ k8s@k8s-master-ah-01:~$ kubectl logs date-print-psxw6
 Sun Feb  3 18:10:45 UTC 2019
 k8s@k8s-master-ah-01:~$
 ```
+
+https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
