@@ -312,10 +312,14 @@ Execute this small script to copy the `admin.kubeconfig` config file to `~/.kube
 ```bash
 if [ -d ~/.kube ]
 then
+ echo "Directory .kube exist. Copying config file"
  if [ -f ~/.kube/config ]
-   cp ~/admin.kubeconfig ~/.kube/config
-else
- mkdir ~/.kube
- cp ~/admin.kubeconfig ~/.kube/config
+ then
+  cp ~/admin.kubeconfig ~/.kube/config
+ else
+  echo "Directory .kube dosn't exist, so creating and then copying config file"
+  mkdir ~/.kube
+  cp ~/admin.kubeconfig ~/.kube/config
+ fi 
 fi
 ```
