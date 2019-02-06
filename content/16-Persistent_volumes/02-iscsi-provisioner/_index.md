@@ -1,4 +1,12 @@
++++
+menutitle = "Introduction"
+date = 2018-12-29T17:15:52Z
+weight = 2
+chapter = false
+pre = "<b>- </b>"
++++
 
+# Dynamic Volume Provisioner with targetd
 
 ### Setup targetd iscsi server on CentOS 7
 
@@ -212,7 +220,7 @@ o- / ...........................................................................
   pvc-2a484a72-2a3e-11e9-aa2d-506b8db54343 vg-targetd -wi-ao---- 100.00m
 ```
 
-More details can be found in below URLs 
+More details can be found in below URLs
 
 https://github.com/kubernetes-incubator/external-storage/tree/master/iscsi/targetd
 https://github.com/kubernetes-incubator/external-storage/tree/master/iscsi/targetd/kubernetes
