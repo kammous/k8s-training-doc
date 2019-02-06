@@ -104,6 +104,7 @@ $ sudo vi /etc/iscsi/initiatorname.iscsi
 $ sudo systemctl status open-iscsi
 $ sudo systemctl restart open-iscsi
 ```
+
 ### Download and modify storage provisioner yaml on Master node
 
 ```shell
