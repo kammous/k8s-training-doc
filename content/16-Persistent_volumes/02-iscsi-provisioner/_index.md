@@ -15,6 +15,7 @@ pre = "<b>- </b>"
   Select only first disk for installation
 
 - Disable SELinux
+
 ```shell
 # grep disabled /etc/sysconfig/selinux
 ```
@@ -22,18 +23,18 @@ pre = "<b>- </b>"
 >Output
 
 ```
-#     disabled - No SELinux policy is loaded.
 SELINUX=disabled
 ```
 
 - Disable firewall
 
 ```shell
-# systemctl disable firewalld
-# systemctl stop firewalld
+systemctl disable firewalld
+systemctl stop firewalld
 ```
 
 - If yo are not rebooting the OS now , then make sure to disable SELinux using setenforce
+
 ```shell
 setenforce 0
 ```
@@ -44,13 +45,13 @@ setenforce 0
 yum install targetd
 ```
 
-Create a volume group for `targetd`
+- Create a volume group for `targetd`
 
 ```
 vgcreate vg-targetd /dev/sdb
 ```
 
-Enable targetd RPC access.
+- Enable targetd RPC access.
 
 ```
 vi /etc/target/targetd.yaml
@@ -67,6 +68,8 @@ user: admin
 ssl: false
 target_name: iqn.2003-01.org.linux-iscsi.k8straining:targetd
 ```
+
+- Start and enable targetd 
 
 ```shell
 systemctl start target
