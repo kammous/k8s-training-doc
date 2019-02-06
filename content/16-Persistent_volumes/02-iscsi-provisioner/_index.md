@@ -137,7 +137,7 @@ vi iscsi-provisioner-class.yaml
 ```yaml
 targetPortal -> 10.136.102.168
 iqn -> iqn.2003-01.org.linux-iscsi.k8straining:targetd
-iqn.1993-08.org.debian:01:k8s-worker-ah-01,iqn.1993-08.org.debian:01:k8s-worker-ah-02,iqn.1993-08.org.debian:01:k8s-worker-ah-03
+initiators -> iqn.1993-08.org.debian:01:k8s-worker-ah-01,iqn.1993-08.org.debian:01:k8s-worker-ah-02,iqn.1993-08.org.debian:01:k8s-worker-ah-03
 ```
 
 ### Apply all configuration
