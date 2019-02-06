@@ -22,7 +22,7 @@ pre = "<b>- </b>"
 
 >Output
 
-```
+```shell
 SELINUX=disabled
 ```
 
@@ -41,23 +41,23 @@ setenforce 0
 
 - Install `taregtd`
 
-```
+```shell
 yum install targetd
 ```
 
 - Create a volume group for `targetd`
 
-```
+```shell
 vgcreate vg-targetd /dev/sdb
 ```
 
 - Enable targetd RPC access.
 
-```
+```shell
 vi /etc/target/targetd.yaml
 ```
 
-```
+```yaml
 password: nutanix
 
 # defaults below; uncomment and edit
