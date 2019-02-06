@@ -28,10 +28,10 @@ Once docker is installed , execute below steps to make docker ready for `kubelet
 $ vi /lib/systemd/system/docker.service
 ```
 
-Disable iptables and masquerading of docker
+Disable iptables, default bridge network and masquerading on docker
 
 ```ruby
-ExecStart=/usr/bin/dockerd -H fd:// --iptables=false --ip-masq=false
+ExecStart=/usr/bin/dockerd -H fd:// --bridge=none --iptables=false --ip-masq=false
 ```
 
 Cleanup all docker specific networking from worker nodes

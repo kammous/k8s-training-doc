@@ -9,25 +9,69 @@ pre = "<b>- </b>"
 # Job
 
 A job creates one or more pods and ensures that a specified number of them successfully terminate.
-As pods successfully complete, the job tracks the successful completions. When a specified number of successful completions is reached, the job itself is complete. Deleting a Job will cleanup the pods it created.
+As pods successfully complete, the job tracks the successful completions.
+
+When a specified number of successful completions is reached, the job itself is complete.
+
+Deleting a Job will cleanup the pods it created.
+
+- Start a Job to print date
+
+```shell
+$ kubectl run date-print --image=ansilh/debug-tools  --restart=OnFailure  -- /bin/sh -c date
+```
+
+```shell
+$ kubectl get jobs
+```
+
+>Output
 
 ```
-$ kubectl run date-print --image=ansilh/debug-tools  --restart=OnFailure  -- /bin/sh -c date
-
-k8s@k8s-master-ah-01:~$ kubectl get jobs
 NAME         COMPLETIONS   DURATION   AGE
 date-print   0/1           3s         3s
-k8s@k8s-master-ah-01:~$ kubectl get pods
+```
+
+```
+$ kubectl get pods
+```
+
+>Output
+
+```
 NAME               READY   STATUS      RESTARTS   AGE
 date-print-psxw6   0/1     Completed   0          8s
-k8s@k8s-master-ah-01:~$ kubectl get jobs
+```
+
+```
+$ kubectl get jobs
+```
+
+>Output
+
+```
 NAME         COMPLETIONS   DURATION   AGE
 date-print   1/1           4s         10s
-k8s@k8s-master-ah-01:~$
-
-k8s@k8s-master-ah-01:~$ kubectl logs date-print-psxw6
-Sun Feb  3 18:10:45 UTC 2019
-k8s@k8s-master-ah-01:~$
 ```
+
+```
+$ kubectl logs date-print-psxw6
+```
+
+>Output
+
+```
+Sun Feb  3 18:10:45 UTC 2019
+```
+
+To control the number of failure and restart , we can use `spec.backoffLimit`
+
+To start n number of pods that will run in sequential order , we can use ``.spec.completions`
+
+To start multiple pods in parallel , we can use `.spec.parallelism`
+
+To cleanup the completed Jobs automatically , we can use `ttlSecondsAfterFinished` (1.12 alpha feature)
+
+
 
 https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
