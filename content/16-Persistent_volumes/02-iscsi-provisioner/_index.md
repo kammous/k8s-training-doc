@@ -69,7 +69,7 @@ ssl: false
 target_name: iqn.2003-01.org.linux-iscsi.k8straining:targetd
 ```
 
-- Start and enable targetd 
+- Start and enable targetd
 
 ```shell
 systemctl start target
@@ -109,8 +109,12 @@ $ sudo systemctl restart open-iscsi
 ```shell
 $ kubectl create secret generic targetd-account --from-literal=username=admin --from-literal=password=nutanix
 ```
+
+```shell
 wget https://raw.githubusercontent.com/ansilh/kubernetes-the-hardway-virtualbox/master/config/iscsi-provisioner-d.yaml
 ```
+
+```shell
 vi iscsi-provisioner-d.yaml
 ```
 
@@ -118,19 +122,19 @@ Modify  `TARGETD_ADDRESS` to the targetd server address.
 
 ### Download and modify  PersistentVolumeClaim and StorageClass
 
-```
+```shell
 wget https://raw.githubusercontent.com/ansilh/kubernetes-the-hardway-virtualbox/master/config/iscsi-provisioner-pvc.yaml
 ```
 
-```
+```shell
 wget https://raw.githubusercontent.com/ansilh/kubernetes-the-hardway-virtualbox/master/config/iscsi-provisioner-class.yaml
 ```
 
-```
+```shell
 vi iscsi-provisioner-class.yaml
 ```
 
-```
+```yaml
 targetPortal -> 10.136.102.168
 iqn -> iqn.2003-01.org.linux-iscsi.k8straining:targetd
 iqn.1993-08.org.debian:01:k8s-worker-ah-01,iqn.1993-08.org.debian:01:k8s-worker-ah-02,iqn.1993-08.org.debian:01:k8s-worker-ah-03
@@ -172,7 +176,7 @@ $ kubectl get pvc
 
 >Output
 
-```
+```yaml
 NAME      STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS               AGE
 myclaim   Bound    pvc-2a484a72-2a3e-11e9-aa2d-506b8db54343   100Mi      RWO            iscsi-targetd-vg-targetd   4s
 ```
@@ -183,7 +187,7 @@ myclaim   Bound    pvc-2a484a72-2a3e-11e9-aa2d-506b8db54343   100Mi      RWO    
 # targetcli ls
 ```
 
-```
+```yaml
 Warning: Could not load preferences file /root/.targetcli/prefs.bin.
 o- / ......................................................................................................................... [...]
   o- backstores .............................................................................................................. [...]
@@ -211,11 +215,11 @@ o- / ...........................................................................
   o- loopback ......................................................................................................... [Targets: 0]
 ```
 
-```
-# lvs
+```shell
+lvs
 ```
 
-```
+```properties
   LV                                       VG         Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
   home                                     centos     -wi-ao---- <41.12g
   root                                     centos     -wi-ao----  50.00g
