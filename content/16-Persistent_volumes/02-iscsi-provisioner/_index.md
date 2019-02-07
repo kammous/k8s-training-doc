@@ -72,9 +72,9 @@ target_name: iqn.2003-01.org.linux-iscsi.k8straining:targetd
 - Start and enable targetd
 
 ```shell
-systemctl start target
-systemctl enable target
-systemctl status target
+systemctl start targetd
+systemctl enable targetd
+systemctl status targetd
 ```
 
 >Output
@@ -101,8 +101,8 @@ $ sudo vi /etc/iscsi/initiatorname.iscsi
 ```
 
 ```shell
-$ sudo systemctl status open-iscsi
-$ sudo systemctl restart open-iscsi
+$ sudo systemctl status iscsid
+$ sudo systemctl restart iscsid
 ```
 
 ### Download and modify storage provisioner yaml on Master node

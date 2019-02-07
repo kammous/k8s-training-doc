@@ -10,6 +10,6 @@ chapter = true
 
 # Installation
 
-In this chapter we will install virtualbox and setup networking.
-We will lern how to install and configure Docker
-Also we will install a two node kubernete cluster using kubeadm.
+- In this chapter we will install VirtualBox and setup networking.
+- We will learn how to install and configure Docker.
+- Also we will install a two node kubernetes cluster using kubeadm.

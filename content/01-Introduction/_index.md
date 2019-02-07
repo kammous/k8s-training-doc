@@ -9,4 +9,4 @@ chapter = true
 
 # Introduction
 
-In this chapter we will discuss about the basic building blocks of containers with few demos and architecture of kubernetes
+In this session , we will discuss about the building blocks of container technology
