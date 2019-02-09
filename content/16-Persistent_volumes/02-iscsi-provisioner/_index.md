@@ -1,5 +1,5 @@
 +++
-menutitle = "Dynamic Volume Provisioner"
+menutitle = "iSCSI Volume Provisioner"
 date = 2018-12-29T17:15:52Z
 weight = 2
 chapter = false
