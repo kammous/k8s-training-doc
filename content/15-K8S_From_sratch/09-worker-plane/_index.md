@@ -25,7 +25,7 @@ Instructions are [here](/02-installation/04-docker-install)
 Once docker is installed , execute below steps to make docker ready for `kubelet` integration.
 
 ```shell
-$ vi /lib/systemd/system/docker.service
+$ sudo vi /lib/systemd/system/docker.service
 ```
 
 Disable iptables, default bridge network and masquerading on docker
