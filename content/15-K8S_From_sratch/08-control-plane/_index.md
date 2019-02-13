@@ -305,7 +305,7 @@ curl --cacert /var/lib/kubernetes/ca.pem https://$(grep master /etc/hosts |awk '
 }
 ```
 
-### Configure kuberctl
+### Configure kubectl
 
 Execute this small script to copy the `admin.kubeconfig` config file to `~/.kube/config`
 
