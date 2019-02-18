@@ -17,12 +17,13 @@
     <link href="{{"css/auto-complete.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
     <link href="{{"css/theme.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
     <link href="{{"css/hugo-theme.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
+    <link href="{{"css/plyr.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
     {{with .Site.Params.themeVariant}}
       <link href="{{(printf "css/theme-%s.css" .) | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
     {{end}}
 
+    <script src="{{"js/plyr.js"| relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
     <script src="{{"js/jquery-2.x.min.js"| relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
-
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
           display:none !important;
@@ -70,7 +71,7 @@
                  {{if $showBreadcrumb}}
                     {{ template "breadcrumb" dict "page" . "value" .Title }}
                  {{ else }}
-                   {{ .Title }} 
+                   {{ .Title }}
                  {{ end }}
                   </span>
                 </div>
@@ -93,7 +94,7 @@
           {{$parent := .page.Parent }}
           {{ if $parent }}
             {{ $value := (printf "<a href='%s'>%s</a> > %s" $parent.URL $parent.Title .value) }}
-            {{ template "breadcrumb" dict "page" $parent "value" $value }} 
+            {{ template "breadcrumb" dict "page" $parent "value" $value }}
           {{else}}
             {{.value|safeHTML}}
           {{end}}
