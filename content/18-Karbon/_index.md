@@ -19,9 +19,9 @@ chapter = true
   border-radius: 4px;
   margin-bottom: 15px;
 }
-</style>
+<!-- </style>
 <script src="/js/control.js">
-</script>
+</script> -->
 
 <!--
 <video id="plyr-video" poster="" controls>
@@ -34,11 +34,15 @@ chapter = true
                 <source src="Karbon.mp4" type="video/mp4">
  </video>
 
-  <div class="actions">
+<!--  <div class="actions">
     <button type="button" class="btn js-play">Play</button>
     <button type="button" class="btn js-pause">Pause</button>
     <button type="button" class="btn js-stop">Stop</button>
     <button type="button" class="btn js-rewind">Rewind</button>
     <button type="button" class="btn js-forward">Forward</button>
-  </div>
+  </div> -->
 </div>
+
+<!-- <video id="x" poster="" controls>
+  <source src="Karbon.mp4" type="video/mp4">
+</video> -->
