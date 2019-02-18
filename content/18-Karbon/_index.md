@@ -31,7 +31,7 @@ chapter = true
 <div class="container">
 <video controls crossorigin playsinline poster="karbon-poster.jpg" id="player">
                 <!-- Video files -->
-                <source src="Karbon.mp4" type="video/mp4">
+                <source src="Karbon.webm" type="video/mp4">
  </video>
 
   <div class="actions">
