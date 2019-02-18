@@ -3,4 +3,4 @@
 # Use this file wisely
 
 # Video 1 - Karbon # This is a test file to see if we can reuse this script to copy big files
-cp /root/videos/Karbon.webm  /root/k8s-training-doc/content/18-Karbon/
+cp /root/videos/Karbon.mp4  /root/k8s-training-doc/content/18-Karbon/
