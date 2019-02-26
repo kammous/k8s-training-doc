@@ -6,11 +6,11 @@ createFromSiteMenusMain = true
 # pygmentsCodeFences            = true
 # pygmentsCodeFencesGuessSyntax = true
 # pygmentsUseClasses            = true
-[outputs]
-home = [ "HTML", "RSS", "JSON"]
-
 [params]
-themeVariant = "mine"
-editURL = "https://github.com/ansilh/k8s-training-doc/tree/master/content/"
-#menu = [ "Introduction", "Installation", "Pods & Nodes", "Labels & Annotations" ]
-showVisitedLinks = true
+ themeVariant = "mine"
+ editURL = "https://github.com/ansilh/k8s-training-doc/tree/master/content/"
+ disableInlineCopyToClipBoard = true
+ author = "Ansil H"
+ showVisitedLinks = true
+[outputs]
+ home = [ "HTML", "RSS", "JSON"]
