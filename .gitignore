@@ -1,5 +1,5 @@
 .DS_Store
 content/*/*.mp4
 public/.*
-public/*
+public/*/*
 public/*.*
