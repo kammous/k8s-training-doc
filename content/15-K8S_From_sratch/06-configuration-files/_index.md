@@ -16,9 +16,8 @@ In this section you will generate kubeconfig files for the `controller manager`,
 
 ### Kubernetes Public IP Address
 
-Each kubeconfig requires a Kubernetes API Server to connect to. To support high availability the IP address assigned to the HA-Proxy load balancer fronting the Kubernetes API Servers will be used.
-
-Set the `lb0` virtual IP address: 192.168.78.220 as KUBERNETES_PUBLIC_ADDRESS
+Each kubeconfig requires a Kubernetes API Server to connect to.
+Set the KUBERNETES_PUBLIC_ADDRESS with the IP of master.
 
 ```
 KUBERNETES_PUBLIC_ADDRESS=$(grep master /etc/hosts |awk '{print $1}')

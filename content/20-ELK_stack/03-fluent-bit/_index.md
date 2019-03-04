@@ -20,6 +20,11 @@ EOF
 
 ```shell
 $ kubectl create -f fluent-bit-service-account.yaml
+```
+
+>Output
+
+```
 serviceaccount/fluent-bit created
 ```
 
@@ -43,6 +48,11 @@ EOF
 
 ```shell
 $ kubectl create -f fluent-bit-role.yaml
+```
+
+>Output
+
+```
 clusterrole.rbac.authorization.k8s.io/fluent-bit-read created
 ```
 
@@ -65,6 +75,11 @@ EOF
 
 ```shell
 $ kubectl create -f fluent-bit-role-binding.yaml
+```
+
+>Output
+
+```
 clusterrolebinding.rbac.authorization.k8s.io/fluent-bit-read created
 ```
 
@@ -109,7 +124,7 @@ data:
     [FILTER]
         Name                kubernetes
         Match               kube.*
-        Kube_URL            https://kubernetes.default.svc.cluster.local:443
+        Kube_URL            https://kubernetes.default:443
         Merge_Log           On
         K8S-Logging.Parser  On
 
@@ -176,6 +191,11 @@ EOF
 
 ```shell
 $ kubectl create -f fluent-bit-configmap.yaml
+```
+
+>Output
+
+```
 configmap/fluent-bit-config created
 ```
 
@@ -242,5 +262,10 @@ EOF
 
 ```shell
 $ kubectl create -f fluent-bit-ds.yaml
+```
+
+>Output
+
+```
 daemonset.extensions/fluent-bit created
 ```
