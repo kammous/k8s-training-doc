@@ -2,3 +2,4 @@
 content/*/*.mp4
 public/.*
 public/*
+public/*.*
