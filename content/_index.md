@@ -1,23 +1,32 @@
 
 
-[//]: #![Trainer](../images/profile.png?classes=shadow)
+[//]: #
+<p>
+<div style="float: left">
+<img src="../images/profile.JPG"/>
+</div>
+</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-![k8s](k8s.jpeg?classes=shadow&width=50pc)
 
-#### History of K8S
-* 2003-2004: Google introduced Borg system , which started as a small project to manage new search engine.
-Later on it was heavily used for managing internal distributed systems and jobs
+#### Why I created this site ?
+- I want to giveback something to the kubernetes community.
 
-* 2013: Google moved from Borg to Omega - a flexible and scalable scheduler for large clusters
+- This site can be used as a pocket guide.
 
-* 2014: Google introduced kubernetes and big players (IBM, Docker, RedHat, Microsoft) joined the project
+- I spent countless hours to learn kubernetes from ground up by referring many online resources  and it was not an easy job to get everything in one place.
 
-* 2015: Kubernetes 1.0 released and Google partnered with Linux Foundation to form the Cloud Native Computing Foundation (CNCF)
+- Humongous effort has been put up for making this tutorial so that your can save a lot of time.
 
-* 2016: Kubernetes went to mainstream and Helm package manager introduced and `minikube` was also released. Windows support added to k8s
+Enjoy your Kubernetes learning adventure <i class="fas fa-heart"></i>
 
-* 2017: Kubernetes reached v.1.7 and were widely adopted by industry. IBM and Google introduced `Istio` service mesh.
-
-* 2018: Industry understands the power of k8s and adoption rate increased
-
-* 2019: Journey continues...
+#### - Ansil Hameed Kunju
+Reach me @[GitHub <i class='fa fa-github'></i>](https://github.com/ansilh) |
+@[LinkedIn <i class='fab fa-fw fa-linkedin'></i>](https://www.linkedin.com/in/ansil-h-%E2%98%81-48b61415/)
+if you have any suggestions or complaints.

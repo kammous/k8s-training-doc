@@ -6,7 +6,7 @@ chapter = false
 pre = "<b>- </b>"
 +++
 
-# Generating Kubernetes Configuration Files for Authentication
+# Configuration Files
 
 In this lab you will generate [Kubernetes configuration files](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/), also known as kubeconfigs, which enable Kubernetes clients to locate and authenticate to the Kubernetes API Servers.
 

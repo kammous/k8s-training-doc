@@ -1,10 +1,12 @@
 +++
 menutitle = "Linux Kernel"
-date = 2018-12-29T17:15:52Z
+date =  2018-12-29T17:15:52Z
 weight = 5
 chapter = false
+draft = true
 pre = "<b>- </b>"
 +++
+
 
 # Linux Kernel Architecture
 

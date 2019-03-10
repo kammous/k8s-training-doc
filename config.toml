@@ -1,4 +1,4 @@
-title = "Kubernetes Training"
+title = "Kubernetes From Scratch - Ansil"
 theme = "hugo-theme-learn"
 createFromSiteMenusMain = true
 # For search functionality
@@ -11,6 +11,7 @@ createFromSiteMenusMain = true
  editURL = "https://github.com/ansilh/k8s-training-doc/tree/master/content/"
  disableInlineCopyToClipBoard = true
  author = "Ansil H"
+ AuthorName = "Ansil H"
  showVisitedLinks = true
 [outputs]
  home = [ "HTML", "RSS", "JSON"]

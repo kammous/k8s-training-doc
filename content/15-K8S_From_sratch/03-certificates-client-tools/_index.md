@@ -8,6 +8,8 @@ pre = "<b>- </b>"
 
 # Tools Installation
 
+Logon to master node and follow below steps
+
 #### 1. Install cfssl to generate certificates
 ```shell
 $ wget -q --show-progress --https-only --timestamping \
