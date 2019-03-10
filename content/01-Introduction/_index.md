@@ -4,7 +4,6 @@ menuTitle = "1. Introduction"
 date = 2018-12-29T17:15:52Z
 weight = 1
 chapter = true
-draft = true
 +++
 ### Chapter 1
 
