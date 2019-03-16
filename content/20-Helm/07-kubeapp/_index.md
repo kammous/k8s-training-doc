@@ -201,7 +201,7 @@ cronjob.batch/apprepo-sync-svc-cat     0 * * * *   False     0        <none>    
 - Access Kubeapps dashboard
 (My API server's insecure port is listening on 8080 port , so I had to use 8081 for port-forwarding)
 
-```
+```shell
 $ export POD_NAME=$(kubectl get pods --namespace kubeapps -l "app=kubeapps" -o jsonpath="{.items[0].metadata.name}")
 $ kubectl port-forward --namespace kubeapps $POD_NAME 8080:8081
 ```
@@ -228,6 +228,6 @@ $ kubectl get secret $(kubectl get serviceaccount kubeapps-operator -o jsonpath=
 
 ![KubeApps](after-login.jpg?classes=shadow)
 
-- Click on `Catalog` to see all Helm charts from
+- Click on `Catalog` to see all Helm charts from upstream repositories.
 
 ![Catalog](catalog.jpg?classes=shadow)
