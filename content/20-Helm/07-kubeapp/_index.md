@@ -8,6 +8,8 @@ pre = "<b>- </b>"
 
 # Kubeapps
 
+Kubeapps is a web-based UI for deploying and managing applications in Kubernetes clusters
+
 #### Kubeapps Installation
 
 - List present repos
