@@ -2,7 +2,9 @@ title = "Kubernetes From Scratch - Ansil"
 theme = "hugo-theme-learn"
 createFromSiteMenusMain = true
 BaseURL = "https://ansilh.com"
+disqusShortname = "ansilh"
 googleAnalytics = "UA-136333756-1"
+
 # For search functionality
 # pygmentsUseClassic            = false
 # pygmentsCodeFences            = true
