@@ -1,9 +1,9 @@
-title = "Kubernetes From Scratch - Ansil"
+title = "Kubernetes training"
 theme = "hugo-theme-learn"
 createFromSiteMenusMain = true
-BaseURL = "https://ansilh.com"
-disqusShortname = "ansilh"
-googleAnalytics = "UA-136333756-1"
+BaseURL = "https://k8s-school.fr/training"
+disqusShortname = "fjammes"
+googleAnalytics = "UA-146891246-1"
 
 # For search functionality
 # pygmentsUseClassic            = false
@@ -12,10 +12,10 @@ googleAnalytics = "UA-136333756-1"
 # pygmentsUseClasses            = true
 [params]
  themeVariant = "mine"
-# editURL = "https://github.com/ansilh/k8s-training-doc/tree/master/content/"
+ editURL = "https://github.com/k8s-school/k8s-training-doc/tree/master/content/"
  disableInlineCopyToClipBoard = true
- author = "Ansil H"
- AuthorName = "Ansil H"
+ author = "Fabrice Jammes"
+ AuthorName = "Fabrice Jammes"
  showVisitedLinks = true
 [outputs]
  home = [ "HTML", "RSS", "JSON"]
