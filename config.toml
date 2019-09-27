@@ -1,7 +1,7 @@
 title = "Kubernetes training"
 theme = "hugo-theme-learn"
 createFromSiteMenusMain = true
-BaseURL = "https://k8s-school.fr/training"
+BaseURL = "https://k8s-school.fr/resources"
 disqusShortname = "fjammes"
 googleAnalytics = "UA-146891246-1"
 
