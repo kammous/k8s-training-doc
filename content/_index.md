@@ -1,21 +1,9 @@
 
 
-[//]: #
-<p>
-<div style="float: left">
-<a href="http://k8s-school.fr/"><img alt="Figurit Homepage" src="http://k8s-school.fr/images/logo.svg" /></a>
-</div>
-</p>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
+[![K8s-School Logo](http://k8s-school.fr/images/logo.svg "K8s-School, expertise et formation Kubernetes")](https://k8s-school.fr)
 
 #### Why I created this site ?
+
 - I want to giveback something to the kubernetes community.
 
 - This site can be used as a pocket guide.
@@ -30,3 +18,7 @@ Enjoy your Kubernetes learning adventure <i class="fas fa-heart"></i>
 Reach me @[GitHub <i class='fa fa-github'></i>](https://github.com/fjammes) |
 @[LinkedIn <i class='fab fa-fw fa-linkedin'></i>](https://www.linkedin.com/in/fabrice-jammes-5b29b042/)
 if you have any suggestions or complaints.
+
+#### Credits
+
+This site was inspired from [Kubernetes from Scratch](https://ansilh.com)

@@ -5,12 +5,11 @@ set -x
 
 DIR=$(cd "$(dirname "$0")"; pwd -P)
 
-hugo
-
-# directory to backup
 SERVER_DIR="www/resources"
+LOCAL_DIR="$DIR/public"
 
-LOCAL_DIR="./public"
+rm -rf "$LOCAL_DIR/*"
+hugo
 
 . "$DIR/env-creds.sh"
 
