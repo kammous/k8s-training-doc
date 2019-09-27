@@ -3,7 +3,7 @@
 [//]: #
 <p>
 <div style="float: left">
-<img src="../images/profile.JPG"/>
+<a href="http://k8s-school.fr/"><img alt="Figurit Homepage" src="http://k8s-school.fr/images/logo.svg" /></a>
 </div>
 </p>
 <br>
@@ -26,7 +26,7 @@
 
 Enjoy your Kubernetes learning adventure <i class="fas fa-heart"></i>
 
-#### - Ansil Hameed Kunju
-Reach me @[GitHub <i class='fa fa-github'></i>](https://github.com/ansilh) |
-@[LinkedIn <i class='fab fa-fw fa-linkedin'></i>](https://www.linkedin.com/in/ansil-h-%E2%98%81-48b61415/)
+#### - Fabrice Jammes 
+Reach me @[GitHub <i class='fa fa-github'></i>](https://github.com/fjammes) |
+@[LinkedIn <i class='fab fa-fw fa-linkedin'></i>](https://www.linkedin.com/in/fabrice-jammes-5b29b042/)
 if you have any suggestions or complaints.
