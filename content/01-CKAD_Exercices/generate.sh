@@ -28,5 +28,7 @@ for f in $FILES
 do
   TITLE=$(grep "^# " "$f" | head -n 1 | sed "s/^# //")
   sed "s/<TITLE>/$TITLE/" "$HEADER_TPL" | sed "s/<DATE>/$DATE/" > $HEADER_TMP
-  cat "$HEADER_TMP" "$f" > "$DIR/$(basename $f)"
+  MD_FILE="$DIR/$(basename $f)"
+  cat "$HEADER_TMP" "$f" > "$MD_FILE"
+  echo "$MD_FILE generated"
 done
