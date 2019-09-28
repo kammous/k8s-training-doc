@@ -20,3 +20,7 @@ og_url: /01-ckad-exercices/
 ![helm](CKAD-logo.svg)
 
 How to become a kubernetes virtuoso.
+
+### Credits
+
+https://github.com/dgkanatsios/CKAD-exercises.git
