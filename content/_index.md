@@ -1,16 +1,13 @@
 
+[<img alt="K8s-School, expertise et formation Kubernetes" src="http://k8s-school.fr/images/logo.svg" width="600" />](https://k8s-school.fr)
 
-[![K8s-School Logo](http://k8s-school.fr/images/logo.svg "K8s-School, expertise et formation Kubernetes")](https://k8s-school.fr)
+#### Why we created this site ?
 
-#### Why I created this site ?
+- We want to giveback our experience and expertise to the kubernetes community.
 
-- I want to giveback something to the kubernetes community.
+- This site contains tips and tricks related to Kubernetes and Cloud-Native
 
-- This site can be used as a pocket guide.
-
-- I spent countless hours to learn kubernetes from ground up by referring many online resources  and it was not an easy job to get everything in one place.
-
-- Humongous effort has been put up for making this tutorial so that your can save a lot of time.
+- We spent countless hours to learn kubernetes from ground up by referring many online resources  and it was not an easy job to get everything in one place.
 
 Enjoy your Kubernetes learning adventure <i class="fas fa-heart"></i>
 
