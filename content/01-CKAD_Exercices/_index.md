@@ -2,7 +2,7 @@
 title: "CKAD exercices"
 menuTitle: "1. CKAD exercices"
 date: 2018-12-29T17:15:52Z
-weight: 1
+weight: 2
 chapter: true
 keywords:
   - kubernetes
